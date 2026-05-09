@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>3日目 MTG | BeEngineer Camp</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="staff-page">
+    <!-- パスワード入力画面 -->
+    <div class="password-overlay" id="passwordOverlay">
+        <div class="password-box">
+            <h2>🔒 スタッフ専用ページ</h2>
+            <p>パスワードを入力してください</p>
+            <input 
+                type="password" 
+                class="password-input" 
+                id="passwordInput" 
+                placeholder="パスワードを入力"
+            />
+            <button class="password-btn" id="passwordBtn">ログイン</button>
+            <p class="password-error" id="passwordError">❌ パスワードが正しくありません</p>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div id="mainContent" class="content-hidden">
+        <!-- ハンバーガーメニューボタン（SP用） -->
+        <button class="hamburger" id="hamburger" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- サイドバー -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <h1>🔒 Staff Only</h1>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#shirei">📝 始礼</a></li>
+                    <li><a href="#shurei">📝 終礼</a></li>
+                    <li class="nav-divider">
+                        <span class="nav-section-label">📄 ページ一覧</span>
+                    </li>
+                    <li><a href="../index.html">🏠 メインページ</a></li>
+                    <li><a href="schedule.html">📋 スタッフスケジュール</a></li>
+                    <li><a href="items.html">🎒 持ち物チェック</a></li>
+                    <li class="nav-divider">
+                        <span class="nav-section-label">🗓️ MTGページ</span>
+                    </li>
+                    <li><a href="mtg-day1.html">1日目 MTG</a></li>
+                    <li><a href="mtg-day2.html">2日目 MTG</a></li>
+                    <li><a href="mtg-day3.html" class="active">3日目 MTG</a></li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                © 2025 BeEngineer<br>
+                All Rights Reserved
+            </div>
+        </aside>
+
+        <!-- オーバーレイ（SP用） -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- メインコンテンツ -->
+        <main class="main-content">
+            <!-- ヘッダー -->
+            <section id="hero" class="hero">
+                <div class="hero-content">
+                    <div class="hero-panel">
+                        <span class="staff-badge">🔒 スタッフ専用</span>
+                        <h1 class="hero-title">3日目 MTG</h1>
+                        <p class="hero-subtitle">BeEngineer Programming Camp<br>始礼・終礼</p>
+                        <div class="hero-date">11/24<small>(月・祝)</small></div>
+                        <div class="hero-location">📍 ロゴスランド京都（京都府城陽市）</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MTGコンテンツ -->
+            <section class="section">
+                <div class="container">
+                    <!-- 始礼 -->
+                    <div class="mtg-section" data-mtg-section id="shirei">
+                        <div class="mtg-header">
+                            <h2 class="mtg-title">📝 始礼（6:00～）</h2>
+                            <span class="mtg-toggle-icon">▼</span>
+                        </div>
+                        <div class="mtg-content">
+                            <div class="mtg-inner">
+                                <h3 class="mtg-subtitle">🎯 本日の目標</h3>
+                                <ul class="mtg-list">
+                                    <li>最終日の緊張感を保ちつつ、良い締めくくりを</li>
+                                    <li>閉会式で3日間の成果を実感させる</li>
+                                    <li>楽器演奏と閉会式の時間重複への対応</li>
+                                    <li>忘れ物ゼロでの解散</li>
+                                </ul>
+
+                                <h3 class="mtg-subtitle">✅ 確認事項</h3>
+                                <ul class="mtg-list">
+                                    <li><strong>起床時間:</strong> 6:00 各部屋</li>
+                                    <li><strong>朝食・点呼:</strong> 6:30～7:30 1Fレストラン</li>
+                                    <li><strong>荷物移動:</strong> 7:30～9:00 朝活後、荷物を持って研修室へ</li>
+                                    <li><strong>楽器演奏:</strong> 11:00～12:30 屋内（閉会式時間と重複・特に注意）</li>
+                                    <li><strong>閉会式:</strong> 12:00～13:00 全体会場（空気作り重要）</li>
+                                    <li><strong>解散:</strong> 13:00～ エントランス（保護者対応・駅誘導）</li>
+                                </ul>
+
+                                <h3 class="mtg-subtitle">👥 役割分担</h3>
+                                <div class="role-grid">
+                                    <div class="role-card">
+                                        <h4>📸 撮影担当</h4>
+                                        <p>全員で対応！</p>
+                                        <small>朝食・授業・閉会式・集合写真</small>
+                                    </div>
+                                    <div class="role-card">
+                                        <h4>💻 授業担当</h4>
+                                        <p>井ノ本</p>
+                                        <small>9:00～12:00</small>
+                                    </div>
+                                    <div class="role-card">
+                                        <h4>🏆 閉会式進行</h4>
+                                        <p>全員で盛り上げる！</p>
+                                        <small>12:00～13:00</small>
+                                    </div>
+                                    <div class="role-card">
+                                        <h4>🚗 解散対応</h4>
+                                        <p>全スタッフ</p>
+                                        <small>エントランス・駅誘導・昼食チームに留意</small>
+                                    </div>
+                                </div>
+
+                                <h3 class="mtg-subtitle">⚠️ 重要注意事項</h3>
+                                <ul class="mtg-list">
+                                    <li>🎵 <strong>楽器演奏:</strong> 11:00～12:30（閉会式12:00～13:00と重複・音量に特に注意）</li>
+                                    <li>🏆 <strong>閉会式の空気作り:</strong> 繋がから始まり、キュッと締める</li>
+                                    <li>🧳 <strong>荷物管理:</strong> 朝活後に荷物を持って研修室へ（忘れ物注意）</li>
+                                    <li>🔍 <strong>忘れ物確認:</strong> 各部屋・教室の最終チェック徹底</li>
+                                    <li>👋 <strong>保護者対応:</strong> 丁寧な挨拶、3日間の様子共有</li>
+                                </ul>
+
+                                <h3 class="mtg-subtitle">📋 タイムライン</h3>
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <span class="timeline-time">6:00</span>
+                                        <span class="timeline-desc">起床</span>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <span class="timeline-time">6:30～7:30</span>
+                                        <span class="timeline-desc">点呼・朝食（1Fレストラン）</span>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <span class="timeline-time">7:30～9:00</span>
+                                        <span class="timeline-desc">朝活（研修室1～3）荷物を持って研修室へ</span>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <span class="timeline-time">9:00～12:00</span>
+                                        <span class="timeline-desc">授業（研修室1,2・研修室3,4）⚠️11:00～12:30楽器演奏</span>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <span class="timeline-time">12:00～13:00</span>
+                                        <span class="timeline-desc">🏆 閉会式（全体会場）⚠️12:00～12:30楽器演奏継続中</span>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <span class="timeline-time">13:00～</span>
+                                        <span class="timeline-desc">🏁 解散（エントランス） ※昼食チームの誘導を！</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 終礼 -->
+                    <div class="mtg-section" data-mtg-section id="shurei">
+                        <div class="mtg-header">
+                            <h2 class="mtg-title">📝 終礼（解散後）</h2>
+                            <span class="mtg-toggle-icon">▼</span>
+                        </div>
+                        <div class="mtg-content">
+                            <div class="mtg-inner">
+                                <h3 class="mtg-subtitle">✅ 3日間の総括</h3>
+                                <ul class="mtg-list">
+                                    <li><strong>全体の評価</strong></li>
+                                    <li><strong>特に良かった点</strong></li>
+                                    <li><strong>改善すべき点</strong></li>
+                                    <li><strong>次回への提案</strong></li>
+                                </ul>
+
+                                <h3 class="mtg-subtitle">👥 生徒の成長</h3>
+                                <ul class="mtg-list">
+                                    <li><strong>技術面での成長</strong></li>
+                                    <li><strong>コミュニケーション面</strong></li>
+                                    <li><strong>自主性・主体性</strong></li>
+                                    <li><strong>チームワーク</strong></li>
+                                </ul>
+
+                                <h3 class="mtg-subtitle">📝 本日の振り返り</h3>
+                                <ul class="mtg-list">
+                                    <li><strong>閉会式の様子</strong></li>
+                                    <li><strong>解散対応</strong></li>
+                                    <li><strong>忘れ物</strong></li>
+                                    <li><strong>保護者からの反応</strong></li>
+                                    <li><strong>トラブル・事故</strong></li>
+                                </ul>
+
+                                <h3 class="mtg-subtitle">📊 スタッフ各自の感想・反省</h3>
+                                <ul class="mtg-list">
+                                    <li><strong>井ノ本:</strong></li>
+                                    <li><strong>藤原:</strong></li>
+                                    <li><strong>黒田:</strong></li>
+                                    <li><strong>中村:</strong></li>
+                                    <li><strong>前田:</strong></li>
+                                    <li><strong>諸坊:</strong></li>
+                                    <li><strong>市川:</strong></li>
+                                </ul>
+
+                                <h3 class="mtg-subtitle">✅ 終了後の作業</h3>
+                                <ul class="mtg-list">
+                                    <li>□ 全教室の最終チェック完了</li>
+                                    <li>□ 備品の返却・片付け完了</li>
+                                    <li>□ 施設への挨拶・精算完了</li>
+                                    <li>□ 忘れ物リストの作成</li>
+                                    <li>□ 写真・動画の整理</li>
+                                    <li>□ 報告書の作成（期限：）</li>
+                                    <li>□ 各校舎への連絡</li>
+                                </ul>
+
+                                <h3 class="mtg-subtitle">🎉 お疲れ様でした！</h3>
+                                <p style="color: var(--color-text); line-height: 1.8; margin-top: 1rem;">
+                                    3日間の合宿、本当にお疲れ様でした！<br>
+                                    生徒たちの成長を間近で見守ることができ、スタッフ一同、貴重な経験となりました。<br>
+                                    このファイルは今後の合宿運営の参考資料として保管してください。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- フッター -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-character footer-character-left">
+                        <img src="../assets/fav/dot_girl.svg" alt="キャラクター" class="footer-character-img">
+                    </div>
+                    
+                    <div class="footer-main">
+                        <div class="footer-logo-wrapper">
+                            <div class="footer-logo">
+                                <a href="https://logosland.jp/" target="_blank" rel="noopener noreferrer">LOGOS LAND</a><br class="sp-br">
+                                ×<br class="sp-br">
+                                <a href="https://be-engineer.tech/" target="_blank" rel="noopener noreferrer">BeEngineer</a>
+                            </div>
+                        </div>
+                        <div class="footer-info">
+                        京大ITベンチャー発、実践的なチカラを鍛える<br>
+                        中高生対象のプログラミング塾
+                        </div>
+                        <div class="footer-links">
+                            <span>京大本校</span>
+                            <span>梅田校</span>
+                            <span>飯田橋校</span>
+                            <span>横浜校</span>
+                        </div>
+                        <div class="footer-copyright">
+                        © 2025 BeEngineer. All Rights Reserved.
+                        </div>
+                    </div>
+                    
+                    <div class="footer-character footer-character-right">
+                        <img src="../assets/fav/dot_boy.svg" alt="キャラクター" class="footer-character-img">
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../script.js"></script>
+    <script src="auth.js"></script>
+    <script src="mtg.js"></script>
+</body>
+</html>
+

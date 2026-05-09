@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>スタッフ専用 - 詳細スケジュール | BeEngineer Camp</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="staff-page">
+    <!-- パスワード入力画面 -->
+    <div class="password-overlay" id="passwordOverlay">
+        <div class="password-box">
+            <h2>🔒 スタッフ専用ページ</h2>
+            <p>パスワードを入力してください</p>
+            <input 
+                type="password" 
+                class="password-input" 
+                id="passwordInput" 
+                placeholder="パスワード"
+                autocomplete="off"
+            >
+            <button class="password-btn" id="passwordBtn">ログイン</button>
+            <p class="password-error" id="passwordError">パスワードが正しくありません</p>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ（パスワード認証後に表示） -->
+    <div class="content-hidden" id="mainContent">
+        <!-- ハンバーガーメニューボタン（SP用） -->
+        <button class="hamburger" id="hamburger" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- サイドバー -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <h1>🔒 Staff Only</h1>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="schedule.html" class="active">📅 詳細スケジュール</a></li>
+                    <li><a href="tokyo-arrival.html">🚄 東京・横浜チーム</a></li>
+                    <li><a href="items.html">🎒 持ち物チェック</a></li>
+                    <li><a href="../index.html">🏠 メインページ</a></li>
+                    <li class="nav-divider">
+                        <span class="nav-section-label">🗓️ MTGページ</span>
+                    </li>
+                    <li><a href="mtg-day1.html">1日目 MTG</a></li>
+                    <li><a href="mtg-day2.html">2日目 MTG</a></li>
+                    <li><a href="mtg-day3.html">3日目 MTG</a></li>
+                    <!-- <li><a href="../blog/day1.html">📝 ブログ - 1日目</a></li>
+                    <li><a href="../blog/day2.html">📝 ブログ - 2日目</a></li>
+                    <li><a href="../blog/day3.html">📝 ブログ - 3日目</a></li> -->
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                © 2025 BeEngineer<br>
+                All Rights Reserved
+            </div>
+        </aside>
+
+        <!-- オーバーレイ（SP用） -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- メインコンテンツ -->
+        <main class="main-content">
+            <!-- ヘッダー -->
+            <section id="hero" class="hero">
+                <div class="hero-content">
+                    <div class="hero-panel">
+                        <span class="staff-badge">🔒 スタッフ専用</span>
+                        <h1 class="hero-title">詳細スケジュール</h1>
+                        <p class="hero-subtitle">BeEngineer Programming Camp<br>運営用タイムテーブル</p>
+                        <div class="hero-date">11/22<small>(土)</small> ー 11/24<small>(月・祝)</small></div>
+                        <div class="hero-location">📍 ロゴスランド京都（京都府城陽市）</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 詳細スケジュール -->
+            <section id="schedule" class="section">
+                <div class="container">
+                    <h2 class="section-title">詳細タイムテーブル</h2>
+                    <p class="section-desc">
+                        スタッフ向けの詳細なスケジュールです。準備物や担当者の情報も含まれています。
+                    </p>
+
+                    <!-- タブメニュー -->
+                    <div class="schedule-tabs">
+                        <button class="tab-btn active" data-tab="day1">
+                            <span class="tab-emoji">📅</span> 1日目 - 11/22(土)
+                        </button>
+                        <button class="tab-btn" data-tab="day2">
+                            <span class="tab-emoji">📅</span> 2日目 - 11/23(日)
+                        </button>
+                        <button class="tab-btn" data-tab="day3">
+                            <span class="tab-emoji">📅</span> 3日目 - 11/24(月祝)
+                        </button>
+                    </div>
+
+                    <div class="detailed-schedule">
+                        <!-- 1日目 -->
+                        <div class="day-section tab-content active" id="day1">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="time-col">時刻</th>
+                                        <th class="location-col">場所（教室）</th>
+                                        <th class="activity-col">内容</th>
+                                        <th class="note-col">担当・備考</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="time-col">12:00<br>～13:00</td>
+                                        <td class="location-col">スタッフ<br>準備エリア</td>
+                                        <td class="activity-col">🍽️ スタッフ現地集合・始礼・準備</td>
+                                        <td class="note-col"><strong>連絡手段:</strong><br>・参加者専用LINE確認<br>・緊急連絡対応（藤原）</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">13:00<br>～14:00</td>
+                                        <td class="location-col">受付<br>エントランス</td>
+                                        <td class="activity-col">🚗 集合</td>
+                                        <td class="note-col"><strong>現地担当:</strong> 藤原以外（生徒受け入れなど）<br><br><strong>駅担当:</strong> 藤原<br><strong>JR城陽:</strong> バス13:37発（13:07発）</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">14:00<br>～15:00</td>
+                                        <td class="location-col">研修室1～3</td>
+                                        <td class="activity-col">🎤 開会式</td>
+                                        <td class="note-col">・アイスブレイク<br>・クラス分け<br>・班分け<br>・班長決め<br>・ルール確認<br>・オリテ<br>・Wi-Fi接続</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">15:00<br>～16:00</td>
+                                        <td class="location-col">研修室1～4</td>
+                                        <td class="activity-col">💻 授業（4区画）</td>
+                                        <td class="note-col"><strong>授業担当:</strong> 井ノ本<br><strong>サポーター:</strong> 全員<br><strong>テーマ:</strong><br>・Colabの使い方<br>・ファイルの作成<br>・動作確認
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">16:00<br>～17:00</td>
+                                        <td class="location-col">研修室1,2<br>研修室3,4</td>
+                                        <td class="activity-col">💻 授業（4区画）</td>
+                                        <td class="note-col"><strong>テーマ:機械学習の基礎 - 手書き文字認識</strong><br>・機械学習の全体像<br>・学習データの準備<br>
+                                            <br><strong>授業担当:</strong> 井ノ本<br><strong>サポーター:</strong> 黒田・中村・市川<br><strong>教室:</strong> 研修室1,2<br><br><strong>授業担当:</strong> 藤原<br><strong>サポーター:</strong> 諏訪・前田<br><strong>教室:</strong> 研修室3</td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">17:00<br>～18:00</td>
+                                        <td class="location-col">1Fレストラン</td>
+                                        <td class="activity-col">🍜 夕食</td>
+                                        <td class="note-col"><strong>スタッフ:</strong> 生徒と食事（1名写真係）<br><strong>藤原:</strong><br>・点呼確認<br>・班行動確認<br>・後で食事</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">18:00<br>～19:00</td>
+                                        <td class="location-col">各教室</td>
+                                        <td class="activity-col">☕ 休憩</td>
+                                        <td class="note-col">・各教室スタッフ配置（1名以上）<br>・班行動忘れずす</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">19:00<br>～21:00</td>
+                                        <td class="location-col">研修室1,2<br>研修室3,4</td>
+                                        <td class="activity-col">💻 授業（4区画）</td>
+                                        <td class="note-col"><strong>テーマ:機械学習の基礎 - 手書き文字認識</strong><br>・前処理<br>・モデルの設計<br>
+                                            <br><strong>授業担当:</strong> 井ノ本<br><strong>サポーター:</strong> 黒田・中村・市川<br><strong>教室:</strong> 研修室1,2<br><br><strong>授業担当:</strong> 藤原<br><strong>サポーター:</strong> 諏訪・前田<br><strong>教室:</strong> 研修室3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">21:00<br>～24:00</td>
+                                        <td class="location-col">各部屋<br>大浴場</td>
+                                        <td class="activity-col">🌙 班長会議・就寝準備・質問etc</td>
+                                        <td class="note-col"><strong>21:00～:</strong> 班長会議<br><strong>21:00～22:00:</strong> 男子・大浴場<br><strong>22:00～:</strong> 点呼<br><br><strong>スタッフ終礼</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 2日目 -->
+                        <div class="day-section tab-content" id="day2">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="time-col">時刻</th>
+                                        <th class="location-col">場所（教室）</th>
+                                        <th class="activity-col">内容</th>
+                                        <th class="note-col">担当・備考</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="time-col">6:00<br>～6:30</td>
+                                        <td class="location-col">各部屋</td>
+                                        <td class="activity-col">🌅 起床</td>
+                                        <td class="note-col">各班で動き統一</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">6:30<br>～7:30</td>
+                                        <td class="location-col">1Fレストラン</td>
+                                        <td class="activity-col">🍳 点呼・朝食</td>
+                                        <td class="note-col"><strong>スタッフ:</strong><br>・生徒と食事<br>・1名写真係<br><br><strong>藤原:</strong><br>・点呼確認<br>・班行動確認<br>・後で食事</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">7:30<br>～9:00</td>
+                                        <td class="location-col">研修室1～3</td>
+                                        <td class="activity-col">🌸 朝活（研修室1～3）</td>
+                                        <td class="note-col">合同</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">9:00<br>～12:00</td>
+                                        <td class="location-col">研修室1～3</td>
+                                        <td class="activity-col">💻 授業（研修室1～3）</td>
+                                        <td class="note-col"><strong>テーマ:機械学習の基礎 - 手書き文字認識</strong><br>・学習結果の確認<br>・機械学習のテクニック - データ拡張<br>・機械学習のテクニック - 学習パラメータ<br>
+                                            <br><strong>授業担当:</strong> 井ノ本<br><strong>サポーター:</strong> 黒田・中村・市川<br><strong>教室:</strong> 研修室1,2<br><br><strong>授業担当:</strong> 藤原<br><strong>サポーター:</strong> 諏訪・前田<br><strong>教室:</strong> 研修室3<br><br>⚠️ <strong>10:00～11:00 屋内で楽器演奏あり（音量に注意）</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">12:00<br>～13:00</td>
+                                        <td class="location-col">研修室1～3</td>
+                                        <td class="activity-col">🍜 昼食</td>
+                                        <td class="note-col"><strong>スタッフ:</strong><br>・生徒と食事<br>・1名写真係<br><br><strong>藤原:</strong><br>・点呼確認<br>・班行動確認<br>・後で食事</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">13:00<br>～18:00</td>
+                                        <td class="location-col">研修室1～3</td>
+                                        <td class="activity-col">💻 授業<br>（14:00～研修室4使用可能）</td>
+                                        <td class="note-col"><strong>テーマ:機械学習の基礎 - 手書き文字認識</strong><br>・機械学習のテクニック - モデルの保存<br><br>
+                                            <strong>テーマ:ベースコードの作成 - グレースケール画像の自動色付けモデル</strong><br>・グレースケール画像の自動色付け<br>・使用するデータセットの確認<br>・ベースコードの作成<br>
+                                            <br><strong>授業担当:</strong> 井ノ本<br><strong>サポーター:</strong> 黒田・中村・市川<br><strong>教室:</strong> 研修室1,2<br><br><strong>授業担当:</strong> 藤原<br><strong>サポーター:</strong> 諏訪・前田<br><strong>教室:</strong> 研修室3<br><br>⚠️ <strong>13:00～14:00 屋内で楽器演奏あり（音量に注意）</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">18:00<br>～21:00</td>
+                                        <td class="location-col">外<br>ピラミッドTAKIBI<br>1～4</td>
+                                        <td class="activity-col">🍖 BBQ</td>
+                                        <td class="note-col">・座席は自由<br>・アレルギー類に注意する<br><br>・疲労&非日常からくる羽目外す子に注意<br>・締めるべきときは締める（ルールの徹底）<br><br>コミュニケーションで盛り上げる</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">21:00<br>～24:00</td>
+                                        <td class="location-col">各部屋<br>大浴場</td>
+                                        <td class="activity-col">🌙 班長会議・就寝準備・質問etc</td>
+                                        <td class="note-col"><strong>21:00～:</strong> 班長会議<br><strong>21:00～22:00:</strong> 男子・大浴場<br><strong>22:00～:</strong> 点呼<br><br><strong>スタッフ終礼</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 3日目 -->
+                        <div class="day-section tab-content" id="day3">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="time-col">時刻</th>
+                                        <th class="location-col">場所（教室）</th>
+                                        <th class="activity-col">内容</th>
+                                        <th class="note-col">担当・備考</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="time-col">6:00<br>～6:30</td>
+                                        <td class="location-col">各部屋</td>
+                                        <td class="activity-col">🌅 起床</td>
+                                        <td class="note-col">各班で動き統一</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">6:30～7:30</td>
+                                        <td class="location-col">1Fレストラン</td>
+                                        <td class="activity-col">🍳 点呼・朝食</td>
+                                        <td class="note-col"><strong>スタッフ:</strong><br>・生徒と食事<br>・1名写真係<br>・中村帰宅！（お疲れ様でした～）<br><br><strong>藤原:</strong><br>・点呼確認<br>・班行動確認<br>・後で食事</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">7:30<br>～9:00</td>
+                                        <td class="location-col">研修室1～3</td>
+                                        <td class="activity-col">🌸 朝活（研修室1～3）</td>
+                                        <td class="note-col">荷物を持って研修室へ</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">9:00<br>～12:00</td>
+                                        <td class="location-col">研修室1～4</td>
+                                        <td class="activity-col">💻 授業（4区画）</td>
+                                        <td class="note-col"><strong>テーマ:モデルの保存〜Gitの関連を1周やってみる</strong><br><br><strong>授業担当:</strong> 井ノ本<br><strong>サポーター:</strong> 全員<br><br>⚠️ <strong>11:00～12:30 屋内で楽器演奏あり（音量に注意・閉会式にも影響）</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">12:00<br>～13:00</td>
+                                        <td class="location-col">全体会場</td>
+                                        <td class="activity-col">🏆 閉会式</td>
+                                        <td class="note-col"><strong>空気作り（繋がから）キュッと締める</strong><br><br>⚠️ <strong>12:00～12:30 楽器演奏が続いているため音量に注意</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-col">13:00～</td>
+                                        <td class="location-col">エントランス</td>
+                                        <td class="activity-col">🏁 解散</td>
+                                        <td class="note-col"><strong>終了後の動き:</strong><br>・資料等・清算<br>・各校舎に連絡<br>・忘れ物確認</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 食事情報 -->
+                        <div class="info-box meals-info-box">
+                            <h3 class="info-box-title">🍽️ 食事情報</h3>
+                            
+                            <h4 class="info-box-subtitle">📅 1日目（11/22）</h4>
+                            <ul class="info-box-list with-margin-bottom">
+                                <li>🍜 <strong>夕食:</strong> 1Fフロントの近くレストラン（18:00～19:00）</li>
+                            </ul>
+                            
+                            <h4 class="info-box-subtitle">📅 2日目（11/23）</h4>
+                            <ul class="info-box-list with-margin-bottom">
+                                <li>🍳 <strong>朝食:</strong> 1Fフロントの近くレストラン（6:45～7:30）</li>
+                                <li>🍜 <strong>昼食:</strong> 研修室1～3（12:00～13:00）</li>
+                                <li>🍖 <strong>夕食（BBQ）:</strong> 外ピラミッドTAKIBI1～4（18:00～21:00）</li>
+                            </ul>
+                            
+                            <h4 class="info-box-subtitle">📅 3日目（11/24）</h4>
+                            <ul class="info-box-list no-margin-bottom">
+                                <li>🍳 <strong>朝食:</strong> 1Fフロントの近くレストラン（6:45～7:30）</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 重要事項 -->
+                        <div class="info-box important-info-box">
+                            <h3 class="info-box-title">📝 重要事項・チェックリスト</h3>
+                            <ul class="info-box-list">
+                                <li>✅ 緊急連絡先リストを常に携帯</li>
+                                <li>✅ 救急箱・AEDの場所を確認（館内マップ確認）</li>
+                                <li>✅ アレルギー情報の再確認（食事前に必ず確認）</li>
+                                <li>✅ 天候による変更プラン準備（雨天時：室内ゲーム）</li>
+                                <li>✅ カメラ・撮影機材のバッテリー確認</li>
+                                <li>✅ 参加者の健康状態を常に把握（毎朝の点呼時確認）</li>
+                                <li>✅ Wi-Fi接続情報の共有準備</li>
+                                <li>✅ 研修室1～4の事前確認（場所・設備）</li>
+                                <li>✅ 大浴場利用時間の管理（男子21:00～22:00）</li>
+                                <li>✅ 班長会議の進行準備（21:00～、各日）</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- その他注意事項 -->
+                        <div class="info-box other-notes-box">
+                            <h3 class="info-box-title">⚠️ その他注意事項</h3>
+                            <ul class="info-box-list">
+                                <li>🛁 <strong>大浴場:</strong> 23時まで利用可能</li>
+                                <li>🚗 <strong>駐車場:</strong> 無料（30分間）でご利用いただけます</li>
+                                <li>🚃 <strong>アクセス:</strong> JR城陽駅バス（13:07～）で参加者導線を確保</li>
+                                <li>📱 <strong>連絡体制:</strong> スタッフ間の連絡手段を確認</li>
+                                <li>🔒 <strong>貴重品管理:</strong> 参加者への注意喚起を徹底</li>
+                                <li>📸 <strong>写真撮影:</strong> 保護者への共有用に随時撮影</li>
+                                <li>🎵 <strong>楽器演奏（施設内）:</strong> 
+                                    <ul class="nested-list">
+                                        <li>2日目 10:00～11:00 屋内で楽器演奏あり</li>
+                                        <li>2日目 13:00～14:00 屋内で楽器演奏あり</li>
+                                        <li>3日目 11:00～12:30 屋内で楽器演奏あり（閉会式時間と重複）</li>
+                                        <li>⚠️ 授業や閉会式の音量に注意が必要</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-character footer-character-left">
+                    <img src="../assets/fav/dot_girl.svg" alt="キャラクター" class="footer-character-img">
+                </div>
+                
+                <div class="footer-main">
+                    <div class="footer-logo-wrapper">
+                        <div class="footer-logo">
+                            <a href="https://logosland.jp/" target="_blank" rel="noopener noreferrer">LOGOS LAND</a><br class="sp-br">
+                            ×<br class="sp-br">
+                            <a href="https://be-engineer.tech/" target="_blank" rel="noopener noreferrer">BeEngineer</a>
+                        </div>
+                    </div>
+                    <div class="footer-info">
+                    京大ITベンチャー発、実践的なチカラを鍛える<br>
+                    中高生対象のプログラミング塾
+                    </div>
+                    <div class="footer-links">
+                        <span>京大本校</span>
+                        <span>梅田校</span>
+                        <span>飯田橋校</span>
+                        <span>横浜校</span>
+                    </div>
+                    <div class="footer-copyright">
+                    © 2025 BeEngineer. All Rights Reserved.
+                    </div>
+                </div>
+                
+                <div class="footer-character footer-character-right">
+                    <img src="../assets/fav/dot_boy.svg" alt="キャラクター" class="footer-character-img">
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../script.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
+
+

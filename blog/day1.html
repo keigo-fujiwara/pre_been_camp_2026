@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BeEngineer合宿 1日目の様子">
+  <title>合宿ブログ - 1日目 | BeEngineer Programming Camp</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  
+  <!-- ハンバーガーメニューボタン（SP用） -->
+  <button class="hamburger" id="hamburger" aria-label="メニュー">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- サイドバー -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <img src="../assets/fav/LOGOSLAND_logo.svg" alt="LOGOS LAND" class="logo-image">
+      <div class="logo-separator">×</div>
+      <img src="../assets/fav/BeEngineer_logo.svg" alt="BeEngineer" class="logo-image logo-been">
+    </div>
+    
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="../index.html">🏠 トップ</a></li>
+        <li class="has-submenu">
+          <a href="#blog">📝 ブログ</a>
+          <ul class="submenu">
+            <li><a href="day1.html">1日目</a></li>
+            <li><a href="day2.html">2日目</a></li>
+            <li><a href="day3.html">3日目</a></li>
+          </ul>
+        </li>
+        <li><a href="../index.html#guide">📢 ご案内</a></li>
+        <li><a href="../index.html#overview">📅 日程・会場</a></li>
+        <li><a href="../index.html#program">💻 学習内容</a></li>
+        <li><a href="../index.html#schedule">⏰ スケジュール</a></li>
+        <li><a href="../index.html#floormap">🗺️ フロアマップ</a></li>
+        <li><a href="../index.html#items">🎒 持ち物</a></li>
+        <li><a href="../index.html#access">🚗 アクセス</a></li>
+        <li><a href="../index.html#health">🏥 健康管理</a></li>
+        <li><a href="../index.html#contact">📧 お問い合わせ</a></li>
+      </ul>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <img src="../assets/fav/dot_girl.svg" alt="" class="sidebar-footer-char sidebar-footer-char-left">
+      <div class="sidebar-footer-text">
+        © 2025 BeEngineer<br>
+        All Rights Reserved
+      </div>
+      <img src="../assets/fav/dot_boy.svg" alt="" class="sidebar-footer-char sidebar-footer-char-right">
+    </div>
+  </aside>
+
+  <!-- オーバーレイ（メニュー開閉用） -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main class="main-content">
+    
+    <!-- ブログヘッダー -->
+    <header class="blog-header">
+      <h1 class="blog-title">合宿 1日目の様子 🎉</h1>
+      <div class="blog-meta">
+        <span>📅 2025年11月22日（土）</span>
+        <span class="meta-separator">|</span>
+        <span>✍️ ライター：中村風花</span>
+      </div>
+    </header>
+
+    <!-- ブログコンテンツ -->
+    <article class="blog-content">
+      
+      <!-- セクション1: 導入 -->
+      <section class="blog-section">
+        <h2>🚗 ロゴスランドに到着！</h2>
+        <p>
+          今日からBeEngineer初の合宿がスタートしました！<br>
+          緑豊かなロゴスランド京都に到着。<br>
+          晴天に恵まれ、みんな元気いっぱいです。
+        </p>
+        <p>
+          まずはオリエンテーションで、3日間の流れや施設の使い方を確認。<br>
+          参加者同士も初対面でしたが、すぐに打ち解けて和やかな雰囲気になりました。
+        </p>
+      </section>
+
+      <!-- 写真セクション -->
+      <div class="blog-images">
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1 (4).jpg" alt="">
+          </div>
+        </div>
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1.jpg" alt="">
+
+          </div>
+        </div>
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1 (1).jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- セクション2: 準備 -->
+      <section class="blog-section">
+        <h2>📶 スタート準備</h2>
+        <p>
+          プログラミングを始める前に、まずは学習環境の準備を行いました。<br>
+          Wi-Fiの設定からスタートし、全員がインターネットに接続できるよう、<br>
+          スタッフがサポートしながら進めていきました。
+        </p>
+
+        <p>
+          そして今回は、普段よく使うVS Codeではなく、<br>
+          ブラウザ上で使える学習向けエディタ「Google Colab」を使用します。<br>
+          ログイン方法や使い方の確認も行い、プログラミングを始める準備はバッチリです！
+        </p>
+      </section>
+
+      <!-- セクション3: 学習内容 -->
+      <section class="blog-section">
+        <h2>💻 Chapter 1: 手書き文字認識に挑戦！</h2>
+        <p>
+          15時から、いよいよ最初の授業「手書き文字認識」がスタート。<br>
+          みんなPCの前に座り、集中してコードを書いています。
+        </p>
+        <p>
+          最初は「畳み込みニューラルネットワークって何？」と戸惑っていた参加者も、<br>
+          実際に手書き数字を認識させるプログラムを動かしてみると、<br>
+          「すごい！ちゃんと認識してる！」と感動の声が上がりました。
+        </p>
+        <p>
+          スタッフがサポートしながら、一つずつ丁寧に進めていきます。<br>
+          難しい部分もありましたが、みんな諦めずに挑戦していました。
+        </p>
+      </section>
+
+      <!-- 写真セクション -->
+      <div class="blog-images">
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1 (9).jpg" alt="">
+          </div>
+        </div>
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1 (19).jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- セクション4: 夕食 -->
+      <section class="blog-section">
+        <h2>🍽️ 美味しい夕食タイム</h2>
+        <p>
+          18時からは楽しみにしていた夕食！<br>
+          今日はロゴスランドのレストランで、みんなで食事を楽しみました。
+        </p>
+        <p>
+          午後の授業で頭をフル回転させたあとなので、<br>
+          お腹がペコペコ。美味しいご飯を食べながら、<br>
+          今日の感想や明日の目標について話が弾みました。
+        </p>
+      </section>
+
+      <!-- 写真セクション -->
+      <div class="blog-images">
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1 (18).jpg" alt="">
+          </div>
+        </div>
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1 (17).jpg" alt="">
+          </div>
+        </div>
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1 (24).jpg" alt="">
+          </div>
+        </div>
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1 (15).jpg" alt="">
+          </div>
+        </div>
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1 (5).jpg" alt="">
+          </div>
+        </div>
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1 (16).jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- セクション5: 夜の学習 -->
+      <section class="blog-section">
+        <h2>🌙 夜も学習は続く</h2>
+        <p>
+          夕食後、19時からは再び授業に戻りました。<br>
+          今度はChapter 1の続きで、より高度な内容に挑戦。
+        </p>
+        <p>
+          夜になってもみんなの集中力は途切れません。<br>
+          「ここがわからない」「こうやったらうまくいった！」と、<br>
+          参加者同士で教え合う場面も見られました。
+        </p>
+        <p>
+          21時に休憩に入り、そのあとは自由時間。<br>
+          わからないところを質問したり、少し先に進めたりと、<br>
+          各自のペースで過ごしています。
+        </p>
+      </section>
+
+      <div class="blog-images">
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1 (3).jpg" alt="">
+          </div>
+        </div>
+        <div class="blog-image">
+          <div class="blog-image-placeholder">
+            <img src="images1/beencamp2025_day1 (12).jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- セクション6: まとめ -->
+      <section class="blog-section">
+        <h2>✨ 1日目を終えて</h2>
+        <p>
+          初日からたくさんのことを学び、充実した1日でした。<br>
+          最初は緊張していた参加者も、すっかりリラックスして<br>
+          プログラミングに没頭している姿が印象的でした。
+        </p>
+        <p>
+          2日目は朝活から始まり、さらに深い内容に進んでいきます。<br>
+        </p>
+        <p class="blog-closing">
+          楽しみつつ元気よく頑張ります！
+        </p>
+      </section>
+
+      <!-- ナビゲーション -->
+      <div class="blog-navigation">
+        <a href="../index.html" class="back-to-home">← トップページに戻る</a>
+      </div>
+
+    </article>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-character footer-character-left">
+          <img src="../assets/fav/dot_girl.svg" alt="キャラクター" class="footer-character-img">
+        </div>
+        
+        <div class="footer-main">
+          <div class="footer-logo-wrapper">
+            <div class="footer-logo">
+              <a href="https://logosland.jp/" target="_blank" rel="noopener noreferrer">LOGOS LAND</a><br class="sp-br">
+              ×<br class="sp-br">
+              <a href="https://be-engineer.tech/" target="_blank" rel="noopener noreferrer">BeEngineer</a>
+            </div>
+          </div>
+          <div class="footer-info">
+            京大ITベンチャー発、実践的なチカラを鍛える<br>
+            中高生対象のプログラミング塾
+          </div>
+          <div class="footer-links">
+            <span>京大本校</span>
+            <span>梅田校</span>
+            <span>飯田橋校</span>
+            <span>横浜校</span>
+          </div>
+          <div class="footer-copyright">
+            © 2025 BeEngineer. All Rights Reserved.
+          </div>
+        </div>
+        
+        <div class="footer-character footer-character-right">
+          <img src="../assets/fav/dot_boy.svg" alt="キャラクター" class="footer-character-img">
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="../script.js"></script>
+
+</body>
+</html>
+

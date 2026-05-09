@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BeEngineer プログラミング合宿 2025年11月22日〜24日 ロゴスランドで開催">
+    <title>BeEngineer Programming Camp | ロゴスランド合宿</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <!-- ハンバーガーメニューボタン（SP用） -->
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- サイドバー -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <img src="assets/fav/LOGOSLAND_logo.svg" alt="LOGOS LAND" class="logo-image">
+            <div class="logo-separator">×</div>
+            <img src="assets/fav/BeEngineer_logo.svg" alt="BeEngineer" class="logo-image logo-been">
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#hero">🏠 トップ</a></li>
+                <li class="has-submenu">
+                    <a href="#blog">📝 ブログ</a>
+                    <ul class="submenu">
+                        <li><a href="blog/day1.html">1日目</a></li>
+                        <li><a href="blog/day2.html">2日目</a></li>
+                        <li><a href="blog/day3.html">3日目</a></li>
+                    </ul>
+                </li>
+                <li><a href="#guide">📢 ご案内</a></li>
+                <li><a href="#overview">📅 日程・会場</a></li>
+                <li><a href="#program">💻 学習内容</a></li>
+                <li><a href="#schedule">⏰ スケジュール</a></li>
+                <li><a href="#floormap">🗺️ フロアマップ</a></li>
+                <li><a href="#items">🎒 持ち物</a></li>
+                <li><a href="#access">🚗 アクセス</a></li>
+                <li><a href="#health">🏥 健康管理</a></li>
+                <li><a href="#contact">📧 お問い合わせ</a></li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <img src="assets/fav/dot_girl.svg" alt="" class="sidebar-footer-char sidebar-footer-char-left">
+            <div class="sidebar-footer-text">
+                © 2025 BeEngineer<br>
+                All Rights Reserved
+            </div>
+            <img src="assets/fav/dot_boy.svg" alt="" class="sidebar-footer-char sidebar-footer-char-right">
+        </div>
+    </aside>
+
+    <!-- オーバーレイ（メニュー開閉用） -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+    
+        <!-- ヒーローセクション -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <div class="hero-panel">
+                <h1 class="hero-title">外で、学んで、<br>楽しんで、成長する。</h1>
+                <p class="hero-subtitle">いつもと異なる環境で、<br class="sp-br">スキルも人間力も磨く。<br>BeEngineer初の合宿、<br class="sp-br">緑に囲まれたLOGOS LANDへ。</p>
+                <div class="hero-date">11/22<small>(土)</small> ー 11/24<small>(月・祝)</small></div>
+                <div class="hero-location">📍 ロゴスランド京都（京都府城陽市）</div>
+                <a href="#program" class="hero-cta">学習内容を見る ▼</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ご案内 -->
+        <section id="guide" class="section">
+            <div class="container">
+                <h2 class="section-title">ご案内</h2>
+                <!-- <div class="guide-toggle-wrapper" data-guide-toggle>
+                    <div class="guide-toggle-header">
+                        <span class="guide-toggle-title">📍 集合場所・注意事項を確認</span>
+                        <span class="guide-toggle-icon">▼</span>
+                    </div>
+                    <div class="guide-content">
+                    <div class="guide-text">
+                        <p class="guide-main">初日13:00ごろから</p>
+                        <p class="guide-detail">
+                            <strong>JR奈良線・城陽駅の改札前</strong>でスタッフが待機しています<br>
+                            （写真の赤枠の範囲にいます！）
+                        </p>
+                        <p class="guide-detail">
+                            <strong>13:37発のバス</strong>までご案内します。
+                        </p>
+                        <p class="guide-note">
+                            ※一緒に乗車しますので、降車のタイミングもご案内します。
+                        </p>
+                        
+                        <div class="guide-notice-inline">
+                            <p class="guide-notice-item">
+                                <span class="guide-notice-icon">⚠️</span>
+                                <strong>城陽駅周辺にはコンビニがありませんのでご注意ください。</strong>
+                            </p>
+                            <p class="guide-notice-item">
+                                <span class="guide-notice-icon">🍱</span>
+                                <strong>14:00集合後、合宿プログラム開始となりますので、集合時間までの間に昼食を済ませるようお願いします。</strong>
+                            </p>
+                            <p class="guide-notice-contact">
+                                （判断が難しい場合は、各校舎にご連絡ください。）
+                            </p>
+                        </div>
+                    </div>
+                    <div class="guide-image">
+                        <img src="assets/guide/station.jpeg" alt="城陽駅 改札前の待ち合わせ場所" loading="lazy">
+                    </div>
+                    </div>
+                </div> -->
+                
+                <div class="line-info-box" data-line-toggle>
+                    <div class="line-toggle-header">
+                        <span class="line-toggle-title">📱 合宿連絡用のLINEアカウント</span>
+                        <span class="line-toggle-icon">▼</span>
+                    </div>
+                    <div class="line-info-content-wrapper">
+                    <div class="line-info-content">
+                        <div class="line-character line-character-left">
+                            <img src="assets/fav/dot_boy.svg" alt="キャラクター" class="line-character-img">
+                        </div>
+                        <div class="line-qr-section">
+                            <img src="assets/guide/BeEnCamp2025.png" alt="BeEngineer合宿2025 LINE QRコード" class="line-qr-code">
+                            <p class="line-link">
+                                <a href="https://lin.ee/YmIR4RE" target="_blank" rel="noopener noreferrer">https://lin.ee/YmIR4RE</a>
+                            </p>
+                            <div class="line-text-section">
+                                <p class="line-account-name">
+                                    <strong>BeEngineer_合宿_2025</strong>
+                                </p>
+                                <p class="line-description">
+                                    合宿関連のご連絡はこちらから送らせていただきます。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="line-character line-character-right">
+                            <img src="assets/fav/dot_girl.svg" alt="キャラクター" class="line-character-img">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="blog-update-box" data-blog-update-toggle>
+                    <div class="blog-update-header">
+                        <span class="blog-update-title">📝 合宿ブログはこちら</span>
+                        <span class="blog-update-icon">▼</span>
+                    </div>
+                    <div class="blog-update-content">
+                        <p class="blog-update-text">
+                            <strong>BeEngineer合宿2025は終了しました。ご参加ありがとうございます。</strong><br>
+                            合宿の様子をブログでお伝えしています。ぜひご覧ください。
+                        </p>
+                        <div class="blog-update-links" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                            <a href="blog/day1.html" class="blog-link-btn">📝 1日目</a>
+                            <a href="blog/day2.html" class="blog-link-btn">📝 2日目</a>
+                            <a href="blog/day3.html" class="blog-link-btn">📝 3日目</a>
+                        </div>
+                        <div class="blog-update-notice">
+                            <p class="blog-notice-item">
+                                <span class="blog-notice-icon">🔒</span>
+                                <strong>参加者限定の情報です。</strong>
+                            </p>
+                            <p class="blog-notice-item">
+                                <span class="blog-notice-icon">🚫</span>
+                                <strong>広報用に利用するものではありません。</strong>
+                            </p>
+                            <p class="blog-notice-item">
+                                <span class="blog-notice-icon">📝</span>
+                                <strong>広報利用する際は、内容および写真を変更する予定です。</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 開催情報バー -->
+        <section id="overview" class="section overview-section">
+            <div class="container">
+                <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="overview-icon">📅</div>
+                    <h3>開催日程</h3>
+                    <p class="overview-main">2025年11月22日（土）<br class="sp-br">〜24日（月・祝）</p>
+                    <p class="overview-sub">13:00集合 〜 13:00解散<br class="sp-br">（2泊3日）</p>
+                    <a href="#schedule" class="overview-btn">
+                        スケジュールを見る ⏰
+                    </a>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="overview-icon">📍</div>
+                    <h3>会場</h3>
+                    <p class="overview-main">ロゴスランド京都</p>
+                    <p class="overview-address">〒610-0121 <br class="sp-br">京都府城陽市<br class="sp-br">寺田大川原24-4</p>
+                    <a href="#access" class="overview-btn">
+                        アクセス方法を見る 🚗
+                    </a>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学習内容 -->
+        <section id="program" class="section">
+            <div class="container">
+                <h2 class="section-title">学習プログラム</h2>
+                <p class="section-intro">
+                画像処理と機械学習の分野に、しっかりと時間をかけて挑戦できます。
+                </p>
+                
+                <!-- タブボタン（SP版のみ表示） -->
+                <div class="program-tabs">
+                    <button class="program-tab-btn" data-tab="1">
+                        <span class="tab-icon">📝</span>
+                        <span class="tab-text">CHAPTER 1</span>
+                    </button>
+                    <button class="program-tab-btn" data-tab="2">
+                        <span class="tab-icon">🎨</span>
+                        <span class="tab-text">CHAPTER 2</span>
+                    </button>
+                    <button class="program-tab-btn" data-tab="3">
+                        <span class="tab-icon">🏆</span>
+                        <span class="tab-text">CHAPTER 3</span>
+                    </button>
+                </div>
+                
+                <!-- コンテンツエリア -->
+                <div class="card-grid">
+                <div class="card card-orange program-card" data-program-card data-tab-content="1">
+                    <div class="card-header">
+                        <div class="card-icon">📝</div>
+                        <div class="card-header-text">
+                            <div class="chapter-number">CHAPTER 1</div>
+                            <h3 class="card-title">手書き文字認識ってどんなもの？機械学習を学ぶ！</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                    <p>手書きの文字をデジタルデータとして文字認識してみよう。手書き文字認識を試しながら、機械で学習によく使われる畳み込みニューラルネットワークというスキルに取り組みます。対象の分類や認識、構築の輸出など社会で広く使われている技術の一端を学びます。</p>
+                    </div>
+                </div>
+                
+                <div class="card card-green program-card" data-program-card data-tab-content="2">
+                    <div class="card-header">
+                        <div class="card-icon">🎨</div>
+                        <div class="card-header-text">
+                            <div class="chapter-number">CHAPTER 2</div>
+                            <h3 class="card-title">白黒画像を自動でカラー化！どんなことに役立つの？</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                    <p>畳み込みニューラルネットワークを用いながら、歴史資料などの復元作業で実際に使われている白黒画像のカラー化に挑戦します。深層学習を楽しめる環境で、親技形式でより実践に近い形式のエンジニアリングにチャレンジします。</p>
+                    </div>
+                </div>
+                
+                <div class="card card-orange program-card" data-program-card data-tab-content="3">
+                    <div class="card-header">
+                        <div class="card-icon">🏆</div>
+                        <div class="card-header-text">
+                            <div class="chapter-number">CHAPTER 3</div>
+                            <h3 class="card-title">カラー化精度向上のコンペティション</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                    <p>学んだ技術を活かして、カラー化の精度を競うコンペティションに挑戦！チームで協力したり、個人で挑戦したり、自分のペースで楽しめます。最終日に成果発表会を行います。</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- スケジュール -->
+        <section id="schedule" class="section">
+            <div class="container">
+                <h2 class="section-title">スケジュール</h2>
+                <p class="section-desc">
+                2泊3日でプログラミングには合計16時間取り組みます。夜は振り返りを楽しむ時間、またはさらにプログラミングを進めることもできます！
+                </p>
+                
+                <!-- タブメニュー -->
+                <div class="schedule-tabs">
+                    <button class="tab-btn active" data-tab="schedule-day1">
+                        <span class="tab-emoji">🍁</span> 1日目 - 11/22(土)
+                    </button>
+                    <button class="tab-btn" data-tab="schedule-day2">
+                        <span class="tab-emoji">📅</span> 2日目 - 11/23(日)
+                    </button>
+                    <button class="tab-btn" data-tab="schedule-day3">
+                        <span class="tab-emoji">📅</span> 3日目 - 11/24(月祝)
+                    </button>
+                </div>
+                
+                <div class="schedule-table-wrapper">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                        <th>時間</th>
+                        <th>場所</th>
+                        <th>内容</th>
+                        <th>備考</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="schedule-row tab-content active" id="schedule-day1">
+                            <td class="schedule-detail">
+                                <div class="time-slot">13:00～14:00</div>
+                                <div class="time-slot">14:00～15:00</div>
+                                <div class="time-slot">15:00～17:00</div>
+                                <div class="time-slot">17:00～18:00</div>
+                                <div class="time-slot">18:00～19:00</div>
+                                <div class="time-slot">19:00～21:00</div>
+                                <div class="time-slot">21:00～24:00</div>
+                            </td>
+                            <td class="schedule-detail schedule-location">
+                                <div class="location-item">受付<br>エントランス</div>
+                                <div class="location-item">研修室1～3</div>
+                                <div class="location-item">研修室1～4</div>
+                                <div class="location-item">1Fレストラン</div>
+                                <div class="location-item">研修室1～4</div>
+                                <div class="location-item">研修室1～4</div>
+                                <div class="location-item">各部屋</div>
+                            </td>
+                            <td class="schedule-detail">
+                                <div class="activity">🚗 集合</div>
+                                <div class="activity">🎤 開会式</div>
+                                <div class="activity">💻 授業</div>
+                                <div class="activity">🍴 夕食</div>
+                                <div class="activity">☕ 休憩</div>
+                                <div class="activity">💻 授業</div>
+                                <div class="activity">🌙 班長会議・就寝準備</div>
+                            </td>
+                            <td class="schedule-detail schedule-note">
+                                <div class="note-item">スタッフが案内します<br>JR城陽駅13:37発のバスも案内可能</div>
+                                <div class="note-item">アイスブレイク・班分け・Wi-Fi接続</div>
+                                <div class="note-item">・Colabの使い方<br>・機械学習の基礎 - 手書き文字認識</div>
+                                <div class="note-item">班ごとに食事</div>
+                                <div class="note-item">各教室にスタッフ配置</div>
+                                <div class="note-item">機械学習の基礎 - 手書き文字認識</div>
+                                <div class="note-item">班長会議は21:00～<br>自由時間・質問対応可能</div>
+                            </td>
+                        </tr>
+                        <tr class="schedule-row tab-content" id="schedule-day2">
+                            <td class="schedule-detail">
+                                <div class="time-slot">6:00～6:30</div>
+                                <div class="time-slot">6:30～7:30</div>
+                                <div class="time-slot">7:30～9:00</div>
+                                <div class="time-slot">9:00～12:00</div>
+                                <div class="time-slot">12:00～13:00</div>
+                                <div class="time-slot">13:00～18:00</div>
+                                <div class="time-slot">18:00～21:00</div>
+                                <div class="time-slot">21:00～24:00</div>
+                            </td>
+                            <td class="schedule-detail schedule-location">
+                                <div class="location-item">各部屋</div>
+                                <div class="location-item">1Fレストラン</div>
+                                <div class="location-item">研修室1～3</div>
+                                <div class="location-item">研修室1～3</div>
+                                <div class="location-item">研修室1～3</div>
+                                <div class="location-item">研修室1～3</div>
+                                <div class="location-item">外・ピラミッド<br>TAKIBI1～4</div>
+                                <div class="location-item">各部屋</div>
+                            </td>
+                            <td class="schedule-detail">
+                                <div class="activity">🌅 起床</div>
+                                <div class="activity">🍳 朝食</div>
+                                <div class="activity">🌸 朝活</div>
+                                <div class="activity">💻 授業</div>
+                                <div class="activity">🍛 昼食</div>
+                                <div class="activity">💻 授業</div>
+                                <div class="activity">🍖 BBQ</div>
+                                <div class="activity">🌙 班長会議・就寝準備</div>
+                            </td>
+                            <td class="schedule-detail schedule-note">
+                                <div class="note-item">各班で協力して起床</div>
+                                <div class="note-item">班ごとに食事</div>
+                                <div class="note-item">全体での朝の活動</div>
+                                <div class="note-item">機械学習の基礎 - 手書き文字認識</div>
+                                <div class="note-item">教室でカレーを食べます！</div>
+                                <div class="note-item">ベースコードの作成 - グレースケール画像の自動色付けモデル<br>14:00～研修室4使用可能</div>
+                                <div class="note-item">コミュニケーションを楽しもう<br>班長会議は21:00～</div>
+                                <div class="note-item">班長会議は21:00～<br>自由時間・質問対応可能</div>
+                            </td>
+                        </tr>
+                        <tr class="schedule-row tab-content" id="schedule-day3">
+                            <td class="schedule-detail">
+                                <div class="time-slot">6:00～6:30</div>
+                                <div class="time-slot">6:30～7:30</div>
+                                <div class="time-slot">7:30～9:00</div>
+                                <div class="time-slot">9:00～12:00</div>
+                                <div class="time-slot">12:00～12:30</div>
+                                <div class="time-slot">12:30～13:00</div>
+                                <div class="time-slot">13:00～</div>
+                            </td>
+                            <td class="schedule-detail schedule-location">
+                                <div class="location-item">各部屋</div>
+                                <div class="location-item">1Fレストラン</div>
+                                <div class="location-item">研修室1～3</div>
+                                <div class="location-item">研修室1～4</div>
+                                <div class="location-item">研修室1～3</div>
+                                <div class="location-item">全体会場</div>
+                                <div class="location-item">エントランス</div>
+                            </td>
+                            <td class="schedule-detail">
+                                <div class="activity">🌅 起床</div>
+                                <div class="activity">🍳 朝食</div>
+                                <div class="activity">🌸 朝活</div>
+                                <div class="activity">💻 授業</div>
+                                <div class="activity">🎤 成果発表準備</div>
+                                <div class="activity">🏆 閉会式</div>
+                                <div class="activity">🏁 解散</div>
+                            </td>
+                            <td class="schedule-detail schedule-note">
+                                <div class="note-item">各班で協力して起床</div>
+                                <div class="note-item">班ごとに食事</div>
+                                <div class="note-item">荷物を持って研修室へ</div>
+                                <div class="note-item">コンペティションの総仕上げ</div>
+                                <div class="note-item">最後の追い込み！</div>
+                                <div class="note-item">成果の確認！</div>
+                                <div class="note-item">お疲れ様でした！<br>忘れ物に注意してください</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                
+                <p class="section-note">
+                授業はまとめて記載していますが、間に休憩時間を設けています。
+                21時以降は自由で、わからないことを聞く、実装の続きをする、早めに就寝するなど各自で過ごす時間となります。
+                </p>
+            </div>
+        </section>
+
+        <!-- フロアマップ -->
+        <section id="floormap" class="section">
+            <div class="container">
+                <h2 class="section-title">フロアマップ</h2>
+                <p class="section-desc">
+                    ロゴスランドの館内マップです。各階の施設配置をご確認ください。
+                </p>
+                
+                <!-- フロアマップタブ -->
+                <div class="floormap-tabs">
+                    <button class="floormap-tab-btn active" data-floor="floor-1f">
+                        <span class="floor-icon">🏢</span> 1F
+                    </button>
+                    <button class="floormap-tab-btn" data-floor="floor-2f">
+                        <span class="floor-icon">🏢</span> 2F
+                    </button>
+                    <button class="floormap-tab-btn" data-floor="floor-3f">
+                        <span class="floor-icon">🏢</span> 3F
+                    </button>
+                </div>
+                
+                <div class="floormap-grid">
+                    <!-- 1F -->
+                    <div class="floormap-item active" data-floormap-item data-floor-content="floor-1f">
+                        <div class="floormap-header" data-floormap-header>
+                            <h3 class="floormap-title">1F</h3>
+                            <span class="floormap-toggle-icon">▼</span>
+                        </div>
+                        <div class="floormap-content">
+                        <div class="floormap-legend">
+                            <ul>
+                                <li><span class="legend-number">1</span> レストラン</li>
+                                <li><span class="legend-number">2</span> フロント</li>
+                                <li><span class="legend-number">3</span> ロビー</li>
+                                <li><span class="legend-number">4</span> ホール</li>
+                                <li><span class="legend-number">5</span> 女子・男子トイレ</li>
+                                <li><span class="legend-number">6</span> 野外活動ピロティ</li>
+                            </ul>
+                        </div>
+                        <div class="floormap-image">
+                            <img src="assets/logos/floor-1f.jpg" alt="1階フロアマップ" loading="lazy">
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2F -->
+                    <div class="floormap-item" data-floormap-item data-floor-content="floor-2f">
+                        <div class="floormap-header" data-floormap-header>
+                            <h3 class="floormap-title">2F</h3>
+                            <span class="floormap-toggle-icon">▼</span>
+                        </div>
+                        <div class="floormap-content">
+                        <div class="floormap-legend">
+                            <ul>
+                                <li><span class="legend-number">1</span> 女子浴室・更衣室</li>
+                                <li><span class="legend-number">2</span> 男子浴室・更衣室</li>
+                                <li><span class="legend-number">3</span> 女子・男子トイレ</li>
+                                <li><span class="legend-number">4</span> ロビー</li>
+                                <li><span class="legend-number">5</span> フリースペース</li>
+                                <li><span class="legend-number">6</span> 宿泊室</li>
+                            </ul>
+                        </div>
+                        <div class="floormap-image">
+                            <img src="assets/logos/floor-2f.jpg" alt="2階フロアマップ" loading="lazy">
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3F -->
+                    <div class="floormap-item" data-floormap-item data-floor-content="floor-3f">
+                        <div class="floormap-header" data-floormap-header>
+                            <h3 class="floormap-title">3F</h3>
+                            <span class="floormap-toggle-icon">▼</span>
+                        </div>
+                        <div class="floormap-content">
+                        <div class="floormap-legend">
+                            <ul>
+                                <li><span class="legend-number">1</span> BBQテラス</li>
+                                <li><span class="legend-number">2</span> 研修室</li>
+                                <li><span class="legend-number">3</span> 女子・男子トイレ</li>
+                                <li><span class="legend-number">4</span> ロビー</li>
+                                <li><span class="legend-number">5</span> 宿泊室</li>
+                            </ul>
+                        </div>
+                        <div class="floormap-image">
+                            <img src="assets/logos/floor-3f.jpg" alt="3階フロアマップ" loading="lazy">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 持ち物リスト -->
+        <section id="items" class="section">
+            <div class="container">
+                <h2 class="section-title">持ち物リスト</h2>
+                <p class="section-desc">
+                チェックを入れて準備しましょう！ ✅<br class="sp-br">（チェック状態は自動保存されます）
+                </p>
+                
+                <!-- PC版 -->
+                <div class="checklist checklist-pc" id="checklist">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item1" data-item="item1">
+                        <label for="item1">💻 PC（貸出あり・持参推奨）</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item2" data-item="item2">
+                        <label for="item2">🔌 電源コード・充電ケーブル</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item3" data-item="item3">
+                        <label for="item3">📓 ノート・筆記用具</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item4" data-item="item4">
+                        <label for="item4">🏥 健康保険証（コピーでも可）</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item5" data-item="item5">
+                        <label for="item5">🪥 歯ブラシ・洗面用具</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item6" data-item="item6">
+                        <label for="item6">👕 衣服（2泊3日分・寝巻き推奨）</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item7" data-item="item7">
+                        <label for="item7">🛁 バスタオル</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item8" data-item="item8">
+                        <label for="item8">🧴 ハンドタオル</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item9" data-item="item9">
+                        <label for="item9">💊 常備薬（必要な方）</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item10" data-item="item10">
+                        <label for="item10">🧥 羽織もの（館内は空調完備）</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item11" data-item="item11">
+                        <label for="item11">🥤 水筒</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item12" data-item="item12">
+                        <label for="item12">📱 スマートフォン（連絡用）</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item13" data-item="item13">
+                        <label for="item13">💰 お金（自動販売機があるので、交通費以外に用意していただいても大丈夫）</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item14" data-item="item14">
+                        <label for="item14">☂️ 折りたたみ傘</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item15" data-item="item15">
+                        <label for="item15">🥿 スリッパや上履きなど（任意）</label>
+                    </div>
+                </div>
+                
+                <!-- SP版用のトグル形式 -->
+                <div class="items-mobile" data-items-mobile>
+                    <div class="items-mobile-header">
+                        <span class="items-mobile-title">📦 持ち物を確認する</span>
+                        <span class="items-toggle-icon">▼</span>
+                    </div>
+                    <div class="items-mobile-content">
+                        <div class="checklist" id="checklist-mobile">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item1-mobile" data-item="item1">
+                                <label for="item1-mobile">💻 PC（貸出あり・持参推奨）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item2-mobile" data-item="item2">
+                                <label for="item2-mobile">🔌 電源コード・充電ケーブル</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item3-mobile" data-item="item3">
+                                <label for="item3-mobile">📓 ノート・筆記用具</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item4-mobile" data-item="item4">
+                                <label for="item4-mobile">🏥 健康保険証（コピーでも可）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item5-mobile" data-item="item5">
+                                <label for="item5-mobile">🪥 歯ブラシ・洗面用具</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item6-mobile" data-item="item6">
+                                <label for="item6-mobile">👕 衣服（2泊3日分・寝巻き推奨）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item7-mobile" data-item="item7">
+                                <label for="item7-mobile">🛁 バスタオル</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item8-mobile" data-item="item8">
+                                <label for="item8-mobile">🧴 ハンドタオル</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item9-mobile" data-item="item9">
+                                <label for="item9-mobile">💊 常備薬（必要な方）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item10-mobile" data-item="item10">
+                                <label for="item10-mobile">🧥 羽織もの（館内は空調完備）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item11-mobile" data-item="item11">
+                                <label for="item11-mobile">🥤 水筒（持参推奨）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item12-mobile" data-item="item12">
+                                <label for="item12-mobile">📱 スマートフォン（連絡用）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item13-mobile" data-item="item13">
+                                <label for="item13-mobile">💰 お金（自動販売機があるので、交通費以外に用意していただいても大丈夫）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item14-mobile" data-item="item14">
+                                <label for="item14-mobile">☂️ 折りたたみ傘</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item15-mobile" data-item="item15">
+                                <label for="item15-mobile">🥿 スリッパや上履きなど（任意）</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="drink-notice">
+                    <p class="section-note">
+                        💧 <strong>飲み物について</strong><br>
+                        こちらでペットボトルの水またはお茶を配布しますのでご安心ください。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- アクセス -->
+        <section id="access" class="section">
+            <div class="container">
+                <h2 class="section-title">アクセス</h2>
+                
+                <div class="access-content">
+                    <!-- PC版用のタブレイアウト -->
+                    <div class="access-pc">
+                        <!-- タブメニュー -->
+                        <div class="access-tabs">
+                            <button class="access-tab-btn active" data-access-tab="car">🚗 お車でお越しの方</button>
+                            <button class="access-tab-btn" data-access-tab="train">🚃 電車・バスでお越しの方</button>
+                            <button class="access-tab-btn" data-access-tab="kyoto">🚄 京都駅からお越しの方</button>
+                        </div>
+                        
+                        <!-- 2カラムレイアウト -->
+                        <div class="access-layout">
+                            <!-- 左側：タブコンテンツ -->
+                            <div class="access-tab-content-wrapper">
+                                <!-- お車でお越しの方 -->
+                                <div class="access-tab-content active" id="access-car">
+                                    <div class="access-info-box">
+                                        <p>
+                                            国道24号線バイパスを<strong>京奈和自動車道方面</strong>へ進み、<br>
+                                            京奈和自動車道入口より、国道24号線にて<br>
+                                            <strong>運動公園線を東へ</strong>お進みください。
+                                        </p>
+                                        <p class="access-note access-note-yellow">
+                                            🅿️ 駐車場は<strong>無料（30分間）</strong>でご利用いただけます。
+                                        </p>
+                                        
+                                        <h3 class="access-subtitle">📍 住所</h3>
+                                        <p>
+                                            <strong>ロゴスランド京都（プラムイン城陽）</strong><br>
+                                            〒610-0121<br>
+                                            京都府城陽市寺田大川原24-4
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <!-- 電車・バスでお越しの方 -->
+                                <div class="access-tab-content" id="access-train">
+                                    <div class="access-info-box">
+                                        <p>
+                                            <strong>JR奈良線・城陽駅前</strong>、または
+                                            <strong>近鉄京都線・寺田駅前</strong>から路線バスに乗車
+                                        </p>
+                                        <p class="access-arrow">
+                                            ↓<br>
+                                            <strong>「プラムイン城陽」停留所で下車</strong>
+                                        </p>
+                                        <p class="access-note access-note-blue">
+                                            🚌 運賃：<strong>200円</strong>
+                                        </p>
+                                        
+                                        <h3 class="access-subtitle">📍 住所</h3>
+                                        <p>
+                                            <strong>ロゴスランド京都（プラムイン城陽）</strong><br>
+                                            〒610-0121<br>
+                                            京都府城陽市寺田大川原24-4
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <!-- 京都駅からお越しの方 -->
+                                <div class="access-tab-content" id="access-kyoto">
+                                    <div class="access-info-box">
+                                        <p class="kyoto-team-label">東京・横浜チーム向け</p>
+                                        <div class="access-flow">
+                                            <div class="flow-step">
+                                                <div class="flow-number">1</div>
+                                                <div class="flow-content">
+                                                    <strong>JR京都駅</strong><br>
+                                                    <span class="flow-detail">JR奈良線に乗車</span>
+                                                </div>
+                                            </div>
+                                            <div class="flow-arrow">↓</div>
+                                            <div class="flow-step">
+                                                <div class="flow-number">2</div>
+                                                <div class="flow-content">
+                                                    <strong>JR城陽駅</strong><br>
+                                                    <span class="flow-detail">約25分・運賃 <strong class="fare-highlight">380円</strong></span>
+                                                </div>
+                                            </div>
+                                            <div class="flow-arrow">↓</div>
+                                            <div class="flow-step">
+                                                <div class="flow-number">3</div>
+                                                <div class="flow-content">
+                                                    <strong>城陽駅前バス停</strong><br>
+                                                    <span class="flow-detail">路線バスに乗車</span>
+                                                </div>
+                                            </div>
+                                            <div class="flow-arrow">↓</div>
+                                            <div class="flow-step">
+                                                <div class="flow-number">4</div>
+                                                <div class="flow-content">
+                                                    <strong>プラムイン城陽</strong><br>
+                                                    <span class="flow-detail">約10分・運賃 <strong class="fare-highlight">200円</strong></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="access-note access-note-green">
+                                            💰 <strong>合計運賃：580円</strong>（京都駅～プラムイン城陽）
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 右側：地図 -->
+                            <div class="map-container">
+                                <!-- Google Map埋め込み（ロゴスランド京都） -->
+                                <iframe 
+                                    class="access-map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.050111020896!2d135.79500497618534!3d34.854968172865334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600116d2da8f6fdb%3A0xe0957dd752a7c4f8!2z44Ot44K044K544Op44Oz44OJIO-8iExPR09TIExBTkTvvIk!5e0!3m2!1sja!2sus!4v1762429337173!5m2!1sja!2sus" 
+                                    width="600" 
+                                    height="450" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SP版用のトグル形式 -->
+                    <div class="access-mobile">
+                        <div class="access-item" data-access-item>
+                            <div class="access-item-header">
+                                <span class="access-item-title">🚗 お車でお越しの方</span>
+                                <span class="access-toggle-icon">▼</span>
+                            </div>
+                            <div class="access-item-content">
+                                <p>
+                                    国道24号線バイパスを<strong>京奈和自動車道方面</strong>へ進み、<br>
+                                    京奈和自動車道入口より、国道24号線にて<br>
+                                    <strong>運動公園線を東へ</strong>お進みください。
+                                </p>
+                                <p class="access-note access-note-yellow">
+                                    🅿️ 駐車場は<strong>無料（30分間）</strong>でご利用いただけます。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="access-item" data-access-item>
+                            <div class="access-item-header">
+                                <span class="access-item-title">🚃 電車・バスでお越しの方</span>
+                                <span class="access-toggle-icon">▼</span>
+                            </div>
+                            <div class="access-item-content">
+                                <p>
+                                    <strong>JR奈良線・城陽駅前</strong>、または
+                                    <strong>近鉄京都線・寺田駅前</strong>から路線バスに乗車
+                                </p>
+                                <p class="access-arrow">
+                                    ↓<br>
+                                    <strong>「プラムイン城陽」停留所で下車</strong>
+                                </p>
+                                <p class="access-note access-note-blue">
+                                    🚌 運賃：<strong>200円</strong>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="access-item" data-access-item>
+                            <div class="access-item-header">
+                                <span class="access-item-title">🚄 京都駅からお越しの方</span>
+                                <span class="access-toggle-icon">▼</span>
+                            </div>
+                            <div class="access-item-content">
+                                <div class="access-flow-mobile">
+                                    <div class="flow-step-mobile">
+                                        <div class="flow-number-mobile">1</div>
+                                        <div class="flow-text">
+                                            <strong>JR京都駅</strong><br>
+                                            <span>JR奈良線に乗車</span>
+                                        </div>
+                                    </div>
+                                    <div class="flow-arrow-mobile">↓</div>
+                                    <div class="flow-step-mobile">
+                                        <div class="flow-number-mobile">2</div>
+                                        <div class="flow-text">
+                                            <strong>JR城陽駅</strong><br>
+                                            <span>約25分・運賃 <strong>380円</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="flow-arrow-mobile">↓</div>
+                                    <div class="flow-step-mobile">
+                                        <div class="flow-number-mobile">3</div>
+                                        <div class="flow-text">
+                                            <strong>城陽駅前バス停</strong><br>
+                                            <span>路線バスに乗車</span>
+                                        </div>
+                                    </div>
+                                    <div class="flow-arrow-mobile">↓</div>
+                                    <div class="flow-step-mobile">
+                                        <div class="flow-number-mobile">4</div>
+                                        <div class="flow-text">
+                                            <strong>プラムイン城陽</strong><br>
+                                            <span>約10分・運賃 <strong>200円</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="access-note access-note-green">
+                                    💰 <strong>合計運賃：580円</strong>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="access-item" data-access-item>
+                            <div class="access-item-header">
+                                <span class="access-item-title">📍 住所</span>
+                                <span class="access-toggle-icon">▼</span>
+                            </div>
+                            <div class="access-item-content">
+                                <p>
+                                    <strong>ロゴスランド京都（プラムイン城陽）</strong><br>
+                                    〒610-0121<br>
+                                    京都府城陽市寺田大川原24-4
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="access-item" data-access-item>
+                            <div class="access-item-header">
+                                <span class="access-item-title">🗺️ 地図</span>
+                                <span class="access-toggle-icon">▼</span>
+                            </div>
+                            <div class="access-item-content">
+                                <div class="map-container-mobile">
+                                    <iframe 
+                                        class="access-map"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.050111020896!2d135.79500497618534!3d34.854968172865334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600116d2da8f6fdb%3A0xe0957dd752a7c4f8!2z44Ot44K044K544Op44Oz44OJIO-8iExPR09TIExBTkTvvIk!5e0!3m2!1sja!2sus!4v1762429337173!5m2!1sja!2sus" 
+                                        width="600" 
+                                        height="300" 
+                                        allowfullscreen="" 
+                                        loading="lazy" 
+                                        referrerpolicy="no-referrer-when-downgrade">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 健康管理・安全管理 -->
+        <section id="health" class="section">
+            <div class="container">
+                <h2 class="section-title">健康管理・安全管理</h2>
+                
+                <div class="health-card">
+                    <h3>🏥 救急医療機関</h3>
+                    <p>土日祝のため、救急の際は以下の病院を利用することを想定しています</p>
+                    <div class="hospital-info">
+                        <h4>京都岡本記念病院</h4>
+                        <a href="https://www.okamoto-hp.or.jp/oka2/checkup/emergency.html" target="_blank" rel="noopener noreferrer" class="hospital-link">
+                            🏥 救急外来情報を確認する
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせ -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">お問い合わせ</h2>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>📧 メールでのお問い合わせ</h3>
+                        <p><a href="mailto:support@be-engineer.tech">support@be-engineer.tech</a></p>
+                        <p class="contact-note">ご質問はお気軽にどうぞ</p>
+                    </div>
+                
+                    <div class="contact-card contact-card-emergency">
+                        <h3>☎️ 緊急連絡先（合宿期間中）</h3>
+                        <p><a href="tel:080-3318-8387">080-3318-8387</a></p>
+                        <p class="contact-note">※合宿期間中のみ対応</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-character footer-character-left">
+                    <img src="assets/fav/dot_girl.svg" alt="キャラクター" class="footer-character-img">
+                </div>
+                
+                <div class="footer-main">
+                    <div class="footer-logo-wrapper">
+                        <div class="footer-logo">
+                            <a href="https://logosland.jp/" target="_blank" rel="noopener noreferrer">LOGOS LAND</a><br class="sp-br">
+                            ×<br class="sp-br">
+                            <a href="https://be-engineer.tech/" target="_blank" rel="noopener noreferrer">BeEngineer</a>
+                        </div>
+                    </div>
+                    <div class="footer-info">
+                    京大ITベンチャー発、実践的なチカラを鍛える<br>
+                    中高生対象のプログラミング塾
+                    </div>
+                    <div class="footer-links">
+                        <span>京大本校</span>
+                        <span>梅田校</span>
+                        <span>飯田橋校</span>
+                        <span>横浜校</span>
+                    </div>
+                    <div class="footer-copyright">
+                    © 2025 BeEngineer. All Rights Reserved.
+                    </div>
+                </div>
+                
+                <div class="footer-character footer-character-right">
+                    <img src="assets/fav/dot_boy.svg" alt="キャラクター" class="footer-character-img">
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+

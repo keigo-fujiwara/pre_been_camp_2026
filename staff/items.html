@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スタッフ持ち物チェックリスト | BeEngineer Programming Camp</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="staff-page">
+    <!-- パスワード入力画面 -->
+    <div id="passwordOverlay" class="password-overlay">
+        <div class="password-box">
+            <h2>🔒 スタッフ専用ページ</h2>
+            <p>パスワードを入力してください</p>
+            <input type="password" id="passwordInput" class="password-input" placeholder="パスワード">
+            <button id="passwordBtn" class="password-btn">ログイン</button>
+            <p id="passwordError" class="password-error">❌ パスワードが正しくありません</p>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div id="mainContent" class="content-hidden">
+        <!-- ハンバーガーメニューボタン（SP用） -->
+        <button class="hamburger" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- オーバーレイ（SP用） -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- サイドバー -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <h1>🔒 Staff Only</h1>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="schedule.html">📅 詳細スケジュール</a></li>
+                    <li><a href="tokyo-arrival.html">🚄 東京・横浜チーム</a></li>
+                    <li><a href="items.html" class="active">🎒 持ち物チェック</a></li>
+                    <li><a href="../index.html">🏠 メインページ</a></li>
+                    <li class="nav-divider">
+                        <span class="nav-section-label">🗓️ MTGページ</span>
+                    </li>
+                    <li><a href="mtg-day1.html">1日目 MTG</a></li>
+                    <li><a href="mtg-day2.html">2日目 MTG</a></li>
+                    <li><a href="mtg-day3.html">3日目 MTG</a></li>
+                    <!-- <li><a href="../blog/day1.html">📝 ブログ - 1日目</a></li>
+                    <li><a href="../blog/day2.html">📝 ブログ - 2日目</a></li>
+                    <li><a href="../blog/day3.html">📝 ブログ - 3日目</a></li> -->
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                © 2025 BeEngineer<br>
+                All Rights Reserved
+            </div>
+        </aside>
+
+        <!-- メインコンテンツエリア -->
+        <main class="main-content">
+            <!-- ヒーローセクション -->
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-panel">
+                        <span class="staff-badge">🔒 スタッフ専用</span>
+                        <h1 class="hero-title">スタッフ持ち物<br class="sp-br">チェックリスト</h1>
+                        <p class="hero-subtitle">BeEngineer Programming Camp<br>合宿に必要なものを確認しましょう</p>
+                        <div class="hero-date">11/22<small>(土)</small> ー 11/24<small>(月・祝)</small></div>
+                        <div class="hero-location">📍 ロゴスランド京都（京都府城陽市）</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 持ち物チェックリスト -->
+            <section id="checklist" class="section">
+                <div class="container">
+                    <h2 class="section-title">🎒 スタッフ持ち物チェックリスト</h2>
+                    <p class="section-desc">
+                        チェックを入れて準備しましょう！ ✅<br>
+                        （チェック状態は自動保存されます）
+                    </p>
+
+                    <!-- 基本的な持ち物 -->
+                    <div class="items-category">
+                        <h3 class="category-title">📝 基本的な持ち物</h3>
+                        <div class="checklist" id="basicChecklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item1" data-item="staff-item1">
+                                <label for="staff-item1">💻 PC</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item2" data-item="staff-item2">
+                                <label for="staff-item2">🔌 電源コード・充電ケーブル</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item3" data-item="staff-item3">
+                                <label for="staff-item3">📓 ノート・筆記用具</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item4" data-item="staff-item4">
+                                <label for="staff-item4">📱 スマートフォン<br>（撮影用）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item5" data-item="staff-item5">
+                                <label for="staff-item5">🏥 健康保険証<br>（コピーでも可）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item6" data-item="staff-item6">
+                                <label for="staff-item6">📡 ポケットWi-Fi</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item7" data-item="staff-item7">
+                                <label for="staff-item7">📋 申込書（原本）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item8" data-item="staff-item8">
+                                <label for="staff-item8">🍽️ アレルギーチェックシート<br>（参加者分）</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 宿泊用品 -->
+                    <div class="items-category">
+                        <h3 class="category-title">🏨 宿泊用品</h3>
+                        <div class="checklist" id="stayChecklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item9" data-item="staff-item9">
+                                <label for="staff-item9">👕 衣服<br>（2泊3日分・寝巻き推奨）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item10" data-item="staff-item10">
+                                <label for="staff-item10">🪥 歯ブラシ・洗面用具</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item11" data-item="staff-item11">
+                                <label for="staff-item11">🛁 バスタオル</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item12" data-item="staff-item12">
+                                <label for="staff-item12">🧴 ハンドタオル</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item13" data-item="staff-item13">
+                                <label for="staff-item13">🧥 羽織もの<br>（館内は空調完備）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item14" data-item="staff-item14">
+                                <label for="staff-item14">💊 常備薬（必要な方）</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- スタッフ業務用 -->
+                    <div class="items-category">
+                        <h3 class="category-title">👔 スタッフ業務用</h3>
+                        <div class="checklist" id="workChecklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item15" data-item="staff-item15">
+                                <label for="staff-item15">💻 PC（生徒用・事務機）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item16" data-item="staff-item16">
+                                <label for="staff-item16">🖊️ ホワイトボード用ペン・ボード消し</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item17" data-item="staff-item17">
+                                <label for="staff-item17">📄 授業資料（印刷物）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item18" data-item="staff-item18">
+                                <label for="staff-item18">🧰 救急用品<br>（応急処置キット）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item23" data-item="staff-item23">
+                                <label for="staff-item23">🏷️ 名札<br>（生徒用・スタッフ用）</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- その他・あると便利なもの -->
+                    <div class="items-category">
+                        <h3 class="category-title">💡 その他・あると便利なもの</h3>
+                        <div class="checklist" id="optionalChecklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item19" data-item="staff-item19">
+                                <label for="staff-item19">🥤 飲み物</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item20" data-item="staff-item20">
+                                <label for="staff-item20">🍫 軽食・おやつ</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item21" data-item="staff-item21">
+                                <label for="staff-item21">🔦 懐中電灯（夜間用）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="staff-item22" data-item="staff-item22">
+                                <label for="staff-item22">🧼 除菌シート・消毒液</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- フッター -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-character footer-character-left">
+                        <img src="../assets/fav/dot_girl.svg" alt="キャラクター" class="footer-character-img">
+                    </div>
+                    
+                    <div class="footer-main">
+                        <div class="footer-logo-wrapper">
+                            <div class="footer-logo">
+                                <a href="https://logosland.jp/" target="_blank" rel="noopener noreferrer">LOGOS LAND</a><br class="sp-br">
+                                ×<br class="sp-br">
+                                <a href="https://be-engineer.tech/" target="_blank" rel="noopener noreferrer">BeEngineer</a>
+                            </div>
+                        </div>
+                        <div class="footer-info">
+                        京大ITベンチャー発、実践的なチカラを鍛える<br>
+                        中高生対象のプログラミング塾
+                        </div>
+                        <div class="footer-links">
+                            <span>京大本校</span>
+                            <span>梅田校</span>
+                            <span>飯田橋校</span>
+                            <span>横浜校</span>
+                        </div>
+                        <div class="footer-copyright">
+                        © 2025 BeEngineer. All Rights Reserved.
+                        </div>
+                    </div>
+                    
+                    <div class="footer-character footer-character-right">
+                        <img src="../assets/fav/dot_boy.svg" alt="キャラクター" class="footer-character-img">
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="auth.js"></script>
+    <script src="items.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
+
