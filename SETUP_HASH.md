@@ -185,7 +185,7 @@
 
         <div class="form-group">
             <label for="password">パスワードを入力:</label>
-            <input type="text" id="password" placeholder="例: beengineercamp2025">
+            <input type="text" id="password" placeholder="例: beengineercamp2026">
         </div>
 
         <button onclick="generateHash()">ハッシュを生成</button>

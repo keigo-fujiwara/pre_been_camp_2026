@@ -5,7 +5,7 @@
 
 ## 📋 概要
 
-このサイトは、BeEngineerのプログラミング合宿（2025年11月22日〜24日）の案内用Webページです。
+このサイトは、BeEngineerのプログラミング合宿（2026年8月8日〜10日）の案内用Webページです。
 
 - **開催場所**: ロゴスランド京都
 - **対象**: 中高生（ファミリー参加OK）
@@ -109,7 +109,7 @@ cp daily-template.html daily-day3.html
 ```html
 <title>合宿ブログ - Day 1 | BeEngineer</title>
 <h1 class="blog-title">合宿 1日目の様子 🎉</h1>
-<span>📅 2025年11月22日（土）</span>
+<span>📅 2026年8月8日（土）</span>
 ```
 
 2. **内容を追加・編集**
@@ -143,17 +143,17 @@ cp daily-template.html daily-day3.html
     <div class="card-grid">
       <div class="card">
         <h3>1日目の様子</h3>
-        <p>11月22日（土）</p>
+        <p>8月8日（土）</p>
         <a href="daily-day1.html" style="color: var(--color-secondary);">読む →</a>
       </div>
       <div class="card">
         <h3>2日目の様子</h3>
-        <p>11月23日（日）</p>
+        <p>8月9日（日）</p>
         <a href="daily-day2.html" style="color: var(--color-secondary);">読む →</a>
       </div>
       <div class="card">
         <h3>3日目の様子</h3>
-        <p>11月24日（月・祝）</p>
+        <p>8月10日（月）</p>
         <a href="daily-day3.html" style="color: var(--color-secondary);">読む →</a>
       </div>
     </div>
@@ -292,13 +292,13 @@ body {
 
 ## 📄 ライセンス
 
-© 2025 BeEngineer. All Rights Reserved.
+© 2026 BeEngineer. All Rights Reserved.
 
 このテンプレートはBeEngineer内部での使用を目的としています。
 
 ---
 
-**制作日**: 2025年11月6日  
+**制作日**: 2026年5月10日
 **対応ブラウザ**: Chrome, Firefox, Safari, Edge（最新版）  
 **推奨解像度**: 1920×1080以上（スマホ・タブレットも対応）
 
