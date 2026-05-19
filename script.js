@@ -61,8 +61,306 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // フッターのキャラクター画像をSP版でロゴの隣に配置
   initFooterCharacters();
-  
+
+  // ブログ目次（TOC）を自動生成 + スクロールスパイ
+  initBlogToc();
+
+  // サイドバーキャラクターの吹き出し（ランダムコメント）
+  initSidebarCharacterBubbles();
+
+  // ブログボタンの公開時刻ゲート
+  initBlogButtonGate();
+
+  // スケジュール表の SP 用カードビューを生成・同期
+  initScheduleMobileView();
+
 });
+
+/**
+ * SP 用：スケジュール表（横スクロールが必要なテーブル）を
+ * 「時間 / 場所 / 内容」を1行、その下に「備考」を1行（全幅）のカード形式に組み直す。
+ * 元のタブボタンと .active 状態を同期させる。
+ */
+function initScheduleMobileView() {
+  const wrapper = document.querySelector('.schedule-table-wrapper');
+  if (!wrapper) return;
+  if (document.querySelector('.schedule-mobile-container')) return; // 二重生成防止
+
+  const rows = wrapper.querySelectorAll('.schedule-row');
+  if (rows.length === 0) return;
+
+  const mobileContainer = document.createElement('div');
+  mobileContainer.className = 'schedule-mobile-container';
+
+  rows.forEach((row) => {
+    const block = document.createElement('div');
+    block.className = 'schedule-mobile';
+    block.setAttribute('data-day', row.id);
+    if (row.classList.contains('active')) {
+      block.classList.add('active');
+    }
+
+    const times = row.querySelectorAll('.time-slot');
+    const locations = row.querySelectorAll('.location-item');
+    const activities = row.querySelectorAll('.activity');
+    const notes = row.querySelectorAll('.note-item');
+
+    const count = Math.max(times.length, locations.length, activities.length, notes.length);
+
+    for (let i = 0; i < count; i++) {
+      const card = document.createElement('div');
+      card.className = 'schedule-mobile-card';
+
+      const head = document.createElement('div');
+      head.className = 'schedule-mobile-head';
+
+      const t = document.createElement('div');
+      t.className = 'schedule-mobile-time';
+      if (times[i]) t.innerHTML = times[i].innerHTML;
+      head.appendChild(t);
+
+      const l = document.createElement('div');
+      l.className = 'schedule-mobile-location';
+      if (locations[i]) l.innerHTML = locations[i].innerHTML;
+      head.appendChild(l);
+
+      const a = document.createElement('div');
+      a.className = 'schedule-mobile-activity';
+      if (activities[i]) a.innerHTML = activities[i].innerHTML;
+      head.appendChild(a);
+
+      card.appendChild(head);
+
+      if (notes[i] && notes[i].innerHTML.trim()) {
+        const n = document.createElement('div');
+        n.className = 'schedule-mobile-note';
+        n.innerHTML = notes[i].innerHTML;
+        card.appendChild(n);
+      }
+
+      block.appendChild(card);
+    }
+
+    mobileContainer.appendChild(block);
+  });
+
+  wrapper.parentNode.insertBefore(mobileContainer, wrapper.nextSibling);
+
+  // タブボタンとの同期：クリック後に SP ブロックの .active を更新
+  const tabButtons = document.querySelectorAll('.schedule-tabs .tab-btn');
+  const syncActive = () => {
+    document.querySelectorAll('.schedule-mobile').forEach((block) => {
+      const originalRow = document.getElementById(block.getAttribute('data-day'));
+      if (originalRow && originalRow.classList.contains('active')) {
+        block.classList.add('active');
+      } else {
+        block.classList.remove('active');
+      }
+    });
+  };
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      // 既存のタブ切替ロジックが実行された後に同期させる
+      setTimeout(syncActive, 0);
+    });
+  });
+}
+
+/**
+ * ブログボタンのゲート：data-available-from で指定した日時より前は
+ * リンクを無効化し「準備中」メッセージを表示する
+ */
+function initBlogButtonGate() {
+  const buttons = document.querySelectorAll('.blog-link-btn[data-available-from]');
+  if (buttons.length === 0) return;
+
+  const now = new Date();
+  const toast = createBlogToast();
+  let toastTimer = null;
+
+  buttons.forEach((btn) => {
+    const availableFromStr = btn.getAttribute('data-available-from');
+    const availableFrom = new Date(availableFromStr);
+    if (isNaN(availableFrom.getTime())) return;
+
+    if (now < availableFrom) {
+      btn.classList.add('is-locked');
+      btn.setAttribute('aria-disabled', 'true');
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toast.textContent = '準備中です。しばらくお待ちください';
+        toast.classList.add('show');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2400);
+      });
+    }
+  });
+}
+
+function createBlogToast() {
+  let toast = document.getElementById('blogToast');
+  if (toast) return toast;
+  toast = document.createElement('div');
+  toast.id = 'blogToast';
+  toast.className = 'blog-toast';
+  toast.setAttribute('role', 'status');
+  toast.setAttribute('aria-live', 'polite');
+  document.body.appendChild(toast);
+  return toast;
+}
+
+/**
+ * サイドバー下の左キャラ（dot_girl）の上に吹き出しを 1 つだけ表示
+ * ページ読み込み時にコメント配列からランダムに 1 つ選んで表示
+ */
+function initSidebarCharacterBubbles() {
+  const COMMENTS = [
+    '準備をしよう',
+    '今日も頑張ろう',
+    '今日もお疲れさま',
+  ];
+
+  const girl = document.querySelector('.sidebar-footer-char-left');
+  if (!girl || girl.parentElement.classList.contains('sidebar-char-wrap')) return;
+
+  const wrap = document.createElement('span');
+  wrap.className = 'sidebar-char-wrap';
+  girl.parentNode.insertBefore(wrap, girl);
+  wrap.appendChild(girl);
+
+  const bubble = document.createElement('span');
+  bubble.className = 'sidebar-char-bubble';
+  // ランダムで左右の向きを反転（しっぽが左下 or 右下に出る）
+  if (Math.random() < 0.5) {
+    bubble.classList.add('sidebar-char-bubble--right');
+  }
+  bubble.textContent = COMMENTS[Math.floor(Math.random() * COMMENTS.length)];
+  wrap.insertBefore(bubble, girl);
+}
+
+/**
+ * ブログ目次（TOC）の自動生成 + アクティブハイライト
+ * .blog-section の h2 を読み取って、#blogToc 内の <ul> に目次リンクを生成する
+ * スクロールに合わせて現在のセクションをハイライトする
+ */
+function initBlogToc() {
+  const toc = document.getElementById('blogToc');
+  if (!toc) return;
+
+  const tocList = toc.querySelector('ul');
+  const sections = document.querySelectorAll('.blog-content .blog-section');
+  if (!tocList || sections.length === 0) return;
+
+  // 目次リンクを生成（各セクションにIDを自動付与）
+  const links = [];
+  sections.forEach((section, index) => {
+    const h2 = section.querySelector('h2');
+    if (!h2) return;
+
+    if (!section.id) {
+      section.id = 'section-' + (index + 1);
+    }
+
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + section.id;
+    a.textContent = h2.textContent.trim();
+    li.appendChild(a);
+    tocList.appendChild(li);
+    links.push({ a: a, section: section });
+  });
+
+  if (links.length === 0) return;
+
+  // スクロールに応じてアクティブな目次項目をハイライト
+  const setActive = () => {
+    const scrollY = window.scrollY + 120; // ヘッダ分のオフセット
+    let activeIndex = 0;
+    for (let i = 0; i < links.length; i++) {
+      if (links[i].section.offsetTop <= scrollY) {
+        activeIndex = i;
+      } else {
+        break;
+      }
+    }
+    links.forEach((link, i) => {
+      if (i === activeIndex) {
+        link.a.classList.add('active');
+      } else {
+        link.a.classList.remove('active');
+      }
+    });
+  };
+
+  setActive();
+  window.addEventListener('scroll', setActive, { passive: true });
+  window.addEventListener('resize', setActive);
+
+  // ----- SP用：フローティング目次ボタン + モーダル -----
+  initBlogTocMobile(links);
+}
+
+/**
+ * SP用：右下フローティング「目次」ボタンと、押すと開くモーダルを生成
+ * モーダル内の項目をタップするとそのセクションへスクロールしてモーダルを閉じる
+ */
+function initBlogTocMobile(links) {
+  if (document.getElementById('blogTocFab')) return;
+
+  // フローティングボタン
+  const fab = document.createElement('button');
+  fab.id = 'blogTocFab';
+  fab.className = 'blog-toc-fab';
+  fab.setAttribute('aria-label', '目次を開く');
+  fab.innerHTML = '<span>目次</span><span class="blog-toc-fab-icon" aria-hidden="true"><span></span><span></span></span>';
+  document.body.appendChild(fab);
+
+  // モーダル
+  const modal = document.createElement('div');
+  modal.id = 'blogTocModal';
+  modal.className = 'blog-toc-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-label', '目次');
+  modal.innerHTML = '<div class="blog-toc-modal-panel"><ul></ul></div><button class="blog-toc-modal-close" aria-label="閉じる">×</button>';
+  document.body.appendChild(modal);
+
+  // モーダル内に目次項目を生成
+  const modalList = modal.querySelector('ul');
+  links.forEach((link) => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = link.a.getAttribute('href');
+    a.textContent = link.a.textContent;
+    a.addEventListener('click', () => {
+      closeModal();
+    });
+    li.appendChild(a);
+    modalList.appendChild(li);
+  });
+
+  const openModal = () => {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeModal = () => {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  fab.addEventListener('click', openModal);
+  modal.querySelector('.blog-toc-modal-close').addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+}
 
 /**
  * 持ち物チェックリスト機能
