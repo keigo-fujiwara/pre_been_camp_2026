@@ -1873,6 +1873,9 @@ a {
 
 .footer-logo a:hover {
   opacity: 0.8;
+}
+
+.footer-logo a:hover span {
   text-decoration: underline;
 }
 
