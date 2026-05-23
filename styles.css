@@ -1858,6 +1858,11 @@ a {
   animation-delay: 1s;
 }
 
+/* フッター共通コンポーネントのプレースホルダー（JS注入前のCLS抑止） */
+#site-footer {
+  min-height: 250px;
+}
+
 .footer-logo {
   font-size: 1.5rem;
   font-weight: bold;
