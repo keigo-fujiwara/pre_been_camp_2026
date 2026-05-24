@@ -35,8 +35,8 @@
             </div>
           </div>
           <div class="footer-info">
-            京大ITベンチャー発、実践的なチカラを鍛える<br>
-            中高生対象のプログラミング塾
+            京大ITベンチャー発、<br class="sp-br">実践的なチカラを鍛える<br>
+            中高生対象の<br class="sp-br">プログラミング塾
           </div>
           <div class="footer-links">
             <span>京大本校</span>
