@@ -264,7 +264,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
   width: clamp(120px, 75%, 160px);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 2 / 1; /* 横:縦 = 2:1（正方形の半分の高さ） */
   display: flex;
   align-items: center;
   justify-content: center;
