@@ -1858,6 +1858,11 @@ a {
   animation-delay: 1s;
 }
 
+/* フッター共通コンポーネントのプレースホルダー（JS注入前のCLS抑止） */
+#site-footer {
+  min-height: 250px;
+}
+
 .footer-logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -1873,6 +1878,9 @@ a {
 
 .footer-logo a:hover {
   opacity: 0.8;
+}
+
+.footer-logo a:hover span {
   text-decoration: underline;
 }
 
@@ -3503,16 +3511,23 @@ a {
   }
   
   .footer-content {
-    flex-direction: column;
-    gap: 0;
-    padding: 0 1rem;
-    align-items: center;
+    gap: 1rem;
+    padding: 0 0.5rem;
+    align-items: flex-start;
   }
-  
+
   .footer-main {
-    max-width: 100%;
-    width: 100%;
-    order: 2;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  /* キャラクターを LOGOS LAND × BeEngineer の行に揃える */
+  .footer-character {
+    margin-top: 0.5rem;
+  }
+
+  .footer-character-left {
+    margin-top: 1.5rem;
   }
   
   .footer {
