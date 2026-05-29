@@ -500,8 +500,17 @@ a {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* デフォルトは 1 カラム。2 カラムになる中間レンジを使わず、
+     大画面でのみ 3 カラムに切り替える。 */
+  grid-template-columns: 1fr;
   gap: 2rem;
+}
+
+/* 大画面（サイドバー＋セクション余白を引いても 3 カラムに収まる幅）でのみ 3 カラム */
+@media (min-width: 1200px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .card {
