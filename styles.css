@@ -2730,7 +2730,13 @@ a {
     padding: 0.65rem 0.7rem;
     font-size: 0.85rem;
   }
-  
+
+  /* SP版：トップレベルの項目もスクロールバーと余白を取るため 90% 幅に
+     （submenu 内の項目は除外して submenu 内では full width のまま） */
+  .sidebar-nav > ul > li > a {
+    width: 90%;
+  }
+
   .sidebar-nav a.active {
     background-color: rgba(255, 255, 255, 0.25);
     border: 2px solid var(--color-white);
