@@ -230,8 +230,9 @@ a {
   padding-top: 0.3rem;
   display: flex;
   align-items: center;
+  /* コピーライト文を削除したため、中央寄せ＋gap でキャラ同士の距離を調整して元の位置感に戻す。 */
   justify-content: center;
-  gap: 0.5rem;
+  gap: 4rem;
   position: relative; /* PC：吹き出しの位置基準 */
 }
 

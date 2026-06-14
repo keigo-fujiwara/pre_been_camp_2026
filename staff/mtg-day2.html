@@ -27,46 +27,8 @@
 
     <!-- メインコンテンツ -->
     <div id="mainContent" class="content-hidden">
-        <!-- ハンバーガーメニューボタン（SP用） -->
-        <button class="hamburger" id="hamburger" aria-label="メニュー">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <!-- サイドバー -->
-        <aside class="sidebar" id="sidebar">
-            <div class="sidebar-logo">
-                <h1>🔒 Staff Only</h1>
-            </div>
-            
-            <nav class="sidebar-nav">
-                <ul>
-                    <li><a href="#shirei">📝 始礼</a></li>
-                    <li><a href="#shurei">📝 終礼</a></li>
-                    <li class="nav-divider">
-                        <span class="nav-section-label">📄 ページ一覧</span>
-                    </li>
-                    <li><a href="../index.html">🏠 メインページ</a></li>
-                    <li><a href="schedule.html">📋 スタッフスケジュール</a></li>
-                    <li><a href="items.html">🎒 持ち物チェック</a></li>
-                    <li class="nav-divider">
-                        <span class="nav-section-label">🗓️ MTGページ</span>
-                    </li>
-                    <li><a href="mtg-day1.html">1日目 MTG</a></li>
-                    <li><a href="mtg-day2.html" class="active">2日目 MTG</a></li>
-                    <li><a href="mtg-day3.html">3日目 MTG</a></li>
-                </ul>
-            </nav>
-            
-            <div class="sidebar-footer">
-                © 2026 BeEngineer<br>
-                All Rights Reserved
-            </div>
-        </aside>
-
-        <!-- オーバーレイ（SP用） -->
-        <div class="overlay" id="overlay"></div>
+        <!-- ハンバーガー / サイドバー / オーバーレイ（共通コンポーネント / assets/sidebar.js が描画） -->
+        <div id="site-sidebar" data-variant="staff-mtg"></div>
 
         <!-- メインコンテンツ -->
         <main class="main-content">
@@ -277,6 +239,7 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="../assets/sidebar.js"></script>
     <script src="../script.js"></script>
     <script src="auth.js"></script>
     <script src="mtg.js"></script>
