@@ -159,7 +159,6 @@ a {
 
 .sidebar-nav a:hover {
   background-color: rgba(255, 255, 255, 0.15);
-  transform: translateX(5px);
 }
 
 .sidebar-nav a.active {
@@ -221,7 +220,6 @@ a {
 
 .sidebar-nav .submenu a:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  transform: translateX(5px);
 }
 
 .sidebar-footer {
@@ -2515,6 +2513,13 @@ a {
   /* SP版：サブメニューを下に表示（タップで開閉） */
   .sidebar-nav .submenu {
     position: static;
+    /* PC のドロップダウン用 left/margin-left をリセット
+       （これがないと SP で submenu が左に -1.5rem ずれて切れる） */
+    left: auto;
+    top: auto;
+    margin-left: 0;
+    min-width: 0;
+    width: 90%;
     transform: none;
     opacity: 1;
     visibility: visible;
@@ -2742,7 +2747,13 @@ a {
     padding: 0.65rem 0.7rem;
     font-size: 0.85rem;
   }
-  
+
+  /* SP版：トップレベルの項目もスクロールバーと余白を取るため 90% 幅に
+     （submenu 内の項目は除外して submenu 内では full width のまま） */
+  .sidebar-nav > ul > li > a {
+    width: 90%;
+  }
+
   .sidebar-nav a.active {
     background-color: rgba(255, 255, 255, 0.25);
     border: 2px solid var(--color-white);
