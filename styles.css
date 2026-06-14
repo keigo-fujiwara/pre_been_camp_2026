@@ -232,7 +232,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  position: relative; /* 吹き出しの位置基準 */
+  position: relative; /* PC：吹き出しの位置基準 */
 }
 
 .sidebar-footer-text {
@@ -243,26 +243,23 @@ a {
   width: 35px;
   height: auto;
   opacity: 0.8;
+  flex-shrink: 0;
 }
 
-/* キャラクターのラッパー（JSで生成）。
-   吹き出しは .sidebar-footer を基準に位置決めするため、
-   このラッパーには position:relative を付けない。 */
+/* 旧構造（キャラのラッパー）は今は使わないが、CSS は無害なので残置 */
 .sidebar-char-wrap {
   display: inline-flex;
   align-items: flex-end;
-  cursor: pointer;
 }
 
-/* 吹き出し：正方形（サイドバー幅に収まるサイズ）。
-   ドット絵風：角丸なし。中央配置し、しっぽは下方向の左 or 右に配置（ランダム）。 */
+/* PC：吹き出しは footer の上に絶対配置（クレジットの上に重なる位置） */
 .sidebar-char-bubble {
   position: absolute;
-  bottom: calc(100% + 14px); /* しっぽ＋隙間ぶん上に */
+  bottom: calc(100% + 14px);
   left: 50%;
   transform: translateX(-50%);
   width: clamp(120px, 75%, 160px);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 2 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -283,12 +280,15 @@ a {
   animation: bubblePop 0.4s ease-out;
 }
 
-/* デフォルト（左向き）：しっぽは吹き出しの左下方向に出る */
+/* PC：しっぽは下方向（左下 or 右下） */
 .sidebar-char-bubble::after {
   content: '';
   position: absolute;
   left: 14%;
   bottom: -12px;
+  top: auto;
+  right: auto;
+  transform: none;
   width: 10px;
   height: 10px;
   background-color: var(--color-secondary);
@@ -299,12 +299,13 @@ a {
   position: absolute;
   left: calc(14% + 6px);
   bottom: -24px;
+  top: auto;
+  right: auto;
   width: 7px;
   height: 7px;
   background-color: var(--color-secondary);
 }
 
-/* 右向き（ランダムで付与）：しっぽは吹き出しの右下方向に出る */
 .sidebar-char-bubble--right::after {
   left: auto;
   right: 14%;
@@ -315,13 +316,6 @@ a {
   right: calc(14% + 6px);
 }
 
-/* SP版：サイドバーの文言と被るため吹き出しを非表示 */
-@media (max-width: 768px) {
-  .sidebar-char-bubble {
-    display: none;
-  }
-}
-
 @keyframes bubblePop {
   0% {
     opacity: 0;
@@ -330,6 +324,102 @@ a {
   100% {
     opacity: 1;
     transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/* ============================================
+  SP版：左キャラ・吹き出し・右キャラを横並び（吹き出しはやや上）
+   ============================================ */
+@media (max-width: 768px) {
+  .sidebar-footer {
+    opacity: 1; /* SP では bubble が色濃く見えるよう透過解除 */
+    flex-direction: row;
+    align-items: flex-end; /* キャラを下揃えの基準線に */
+    justify-content: center;
+    gap: 0.5rem;
+    padding-top: 0.75rem; /* 吹き出しが上に出る分 */
+  }
+
+  .sidebar-footer-char-left,
+  .sidebar-footer-char-right {
+    flex-shrink: 0;
+    height: auto;
+    
+    align-self: flex-end;
+    margin: 0;
+  }
+
+  .sidebar-footer-char-left {
+    width: 25px; 
+  }
+
+
+  .sidebar-footer-char-right {
+    width: 30px;
+  }
+
+  .sidebar-footer-text {
+    display: none;
+  }
+
+  .sidebar-char-bubble {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    flex: 1 1 auto;
+    width: auto;
+    height: 3.0rem;
+    min-width: 0;
+    max-width: 9.5rem;
+    align-self: flex-end;
+    margin-bottom: 2.85rem;
+    padding: 0.45rem 0.5rem;
+    font-size: 0.72rem;
+    line-height: 1.25;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    animation: bubblePopSP 0.35s ease-out;
+  }
+/* SP：しっぽは下方向（左下 or 右下）— 吹き出しが上にあるため */
+  
+  .sidebar-char-bubble::after {
+    top: auto;
+    bottom: -6px;
+    left: 8%;
+    right: auto;
+    transform: none;
+    width: 6px;
+    height: 6px;
+  }
+
+  .sidebar-char-bubble::before {
+    top: auto;
+    bottom: -14px; 
+    left: calc(8% - 5px);
+    right: auto;
+    width: 4px;
+    height: 4px;
+  }
+
+  .sidebar-char-bubble--right::after {
+    left: auto;
+    right: 8%;
+  }
+
+  .sidebar-char-bubble--right::before {
+    left: auto;
+    right: calc(8% - 5px);
+  }
+
+  @keyframes bubblePopSP {
+    0% {
+      opacity: 0;
+      transform: scale(0.88);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }
 
@@ -2761,18 +2851,13 @@ a {
   
   .sidebar-footer {
     flex-shrink: 0;
-    padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
   }
-  
-  .sidebar-footer-char {
-    width: 30px;
-  }
-  
+
+  /* 旧: .sidebar-footer-char { width: 30px } を削除。
+     後勝ち上書きで line 335 ブロックの left/right 個別 width を打ち消していた。
+     左右別サイズは line 335 SP ブロックで定義済み。 */
+
   .main-content {
     margin-left: 0;
   }

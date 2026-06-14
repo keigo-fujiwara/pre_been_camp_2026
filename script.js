@@ -212,8 +212,9 @@ function createBlogToast() {
 }
 
 /**
- * サイドバー下の左キャラ（dot_girl）の上に吹き出しを 1 つだけ表示
- * ページ読み込み時にコメント配列からランダムに 1 つ選んで表示
+ * サイドバー下：左キャラ（dot_girl）と右キャラ（dot_boy）の間に
+ * 吹き出しを 1 つインラインで挿入する。
+ * しっぽの向きはランダムで左（左キャラを指す）/右（右キャラを指す）。
  */
 function initSidebarCharacterBubbles() {
   const COMMENTS = [
@@ -223,21 +224,22 @@ function initSidebarCharacterBubbles() {
   ];
 
   const girl = document.querySelector('.sidebar-footer-char-left');
-  if (!girl || girl.parentElement.classList.contains('sidebar-char-wrap')) return;
+  const boy = document.querySelector('.sidebar-footer-char-right');
+  if (!girl || !boy) return;
 
-  const wrap = document.createElement('span');
-  wrap.className = 'sidebar-char-wrap';
-  girl.parentNode.insertBefore(wrap, girl);
-  wrap.appendChild(girl);
+  const footer = girl.parentNode;
+  if (!footer || footer.querySelector('.sidebar-char-bubble')) return; // 二重挿入防止
 
   const bubble = document.createElement('span');
   bubble.className = 'sidebar-char-bubble';
-  // ランダムで左右の向きを反転（しっぽが左下 or 右下に出る）
+  // ランダムで左右の向き（しっぽがどちらのキャラを指すか）を決定
   if (Math.random() < 0.5) {
     bubble.classList.add('sidebar-char-bubble--right');
   }
   bubble.textContent = COMMENTS[Math.floor(Math.random() * COMMENTS.length)];
-  wrap.insertBefore(bubble, girl);
+
+  // 左キャラ ←[吹き出し]→ 右キャラ の順に並ぶよう、boy の直前に挿入
+  footer.insertBefore(bubble, boy);
 }
 
 /**
