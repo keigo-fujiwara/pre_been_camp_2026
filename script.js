@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // フロアマップのタブ機能を初期化（PC版）
   initFloormapTabs();
+
+  // 施設タブ（プラムイン / アイリスイン）の切り替えを初期化
+  initFacilityTabs();
   
   // スクロールスパイ機能を初期化
   initScrollSpy();
@@ -714,62 +717,89 @@ function initFloormapToggle() {
  * タブをクリックして各階を切り替え（アクセスと同じ形式）
  */
 function initFloormapTabs() {
-  const tabButtons = document.querySelectorAll('.floormap-tab-btn');
-  const floormapItems = document.querySelectorAll('[data-floor-content]');
-  
-  if (tabButtons.length === 0 || floormapItems.length === 0) {
-    return;
-  }
-  
-  // 初期状態でPC版の場合、1Fを表示
-  if (window.innerWidth > 768) {
-    const firstTab = document.querySelector('.floormap-tab-btn[data-floor="floor-1f"]');
-    const firstContent = document.querySelector('[data-floor-content="floor-1f"]');
-    if (firstTab && firstContent) {
-      firstTab.classList.add('active');
-      firstContent.classList.add('active');
-    }
-  }
-  
-  // タブボタンをクリックした時の処理
-  tabButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      // PC版（768px超）の場合のみタブ機能を有効化
-      if (window.innerWidth > 768) {
-        const floorId = this.getAttribute('data-floor');
-        const targetContent = document.querySelector(`[data-floor-content="${floorId}"]`);
-        
-        // すべてのタブとコンテンツから active クラスを削除
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        floormapItems.forEach(item => item.classList.remove('active'));
-        
-        // クリックされたタブと対応するコンテンツに active クラスを追加
-        this.classList.add('active');
-        if (targetContent) {
-          targetContent.classList.add('active');
-        }
-      }
-    });
-  });
-  
-  // ウィンドウリサイズ時の処理
-  window.addEventListener('resize', function() {
-    if (window.innerWidth <= 768) {
-      // SP版に戻った場合は、タブのactiveクラスをリセット
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      floormapItems.forEach(item => item.classList.remove('active'));
-    } else {
-      // PC版に戻った場合は、1Fをデフォルト表示
-      const hasActive = Array.from(floormapItems).some(item => item.classList.contains('active'));
+  // 施設ごとに floormap タブをスコープして処理する。
+  // 各 .floormap-tabs の直下の親（.facility-content）内のフロアだけを操作する。
+  const tabContainers = document.querySelectorAll('.floormap-tabs');
+  if (tabContainers.length === 0) return;
+
+  const setupContainer = (tabContainer) => {
+    const scope = tabContainer.closest('.facility-content') || tabContainer.parentElement;
+    const tabButtons = tabContainer.querySelectorAll('.floormap-tab-btn');
+    const items = scope.querySelectorAll('[data-floor-content]');
+    if (tabButtons.length === 0 || items.length === 0) return;
+
+    // PC版：1番目のフロアがアクティブな状態を担保（HTML 側でも明示済み）
+    if (window.innerWidth > 768) {
+      const hasActive = Array.from(items).some(i => i.classList.contains('active'));
       if (!hasActive) {
-        const firstTab = document.querySelector('.floormap-tab-btn[data-floor="floor-1f"]');
-        const firstContent = document.querySelector('[data-floor-content="floor-1f"]');
-        if (firstTab && firstContent) {
-          firstTab.classList.add('active');
-          firstContent.classList.add('active');
-        }
+        items[0].classList.add('active');
+        if (tabButtons[0]) tabButtons[0].classList.add('active');
       }
     }
+
+    tabButtons.forEach((button) => {
+      button.addEventListener('click', function () {
+        if (window.innerWidth > 768) {
+          const floorId = this.getAttribute('data-floor');
+          const targetContent = scope.querySelector(`[data-floor-content="${floorId}"]`);
+
+          // 同じ施設スコープ内だけ active を解除
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          items.forEach(item => item.classList.remove('active'));
+
+          this.classList.add('active');
+          if (targetContent) targetContent.classList.add('active');
+        }
+      });
+    });
+  };
+
+  tabContainers.forEach(setupContainer);
+
+  // リサイズ：SPに戻ったら全 active 解除、PCに戻ったら各施設の先頭フロアを表示
+  window.addEventListener('resize', function () {
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('.floormap-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('[data-floor-content]').forEach(item => item.classList.remove('active'));
+    } else {
+      tabContainers.forEach((tabContainer) => {
+        const scope = tabContainer.closest('.facility-content') || tabContainer.parentElement;
+        const items = scope.querySelectorAll('[data-floor-content]');
+        const tabButtons = tabContainer.querySelectorAll('.floormap-tab-btn');
+        const hasActive = Array.from(items).some(i => i.classList.contains('active'));
+        if (!hasActive && items.length > 0) {
+          items[0].classList.add('active');
+          if (tabButtons[0]) tabButtons[0].classList.add('active');
+        }
+      });
+    }
+  });
+}
+
+/**
+ * 施設タブ（プラムイン / アイリスイン）の切り替え
+ * クリックでパネル表示を切り替え、aria-selected も更新
+ */
+function initFacilityTabs() {
+  const tabButtons = document.querySelectorAll('.facility-tab-btn');
+  const panels = document.querySelectorAll('[data-facility-content]');
+  if (tabButtons.length === 0 || panels.length === 0) return;
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', function () {
+      const facility = this.getAttribute('data-facility');
+
+      tabButtons.forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      panels.forEach((p) => p.classList.remove('active'));
+
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+      const target = document.querySelector(`[data-facility-content="${facility}"]`);
+      if (target) target.classList.add('active');
+    });
   });
 }
 

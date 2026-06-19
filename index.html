@@ -401,86 +401,159 @@
                 <p class="section-desc">
                     ロゴスランドの館内マップです。各階の施設配置をご確認ください。
                 </p>
-                
-                <!-- フロアマップタブ -->
-                <div class="floormap-tabs">
-                    <button class="floormap-tab-btn active" data-floor="floor-1f">
-                        <span class="floor-icon"></span> 1F
+
+                <!-- 施設タブ：プラムイン城陽 / アイリスイン城陽 -->
+                <div class="facility-tabs" role="tablist" aria-label="施設の切り替え">
+                    <button class="facility-tab-btn active" data-facility="plum" role="tab" aria-selected="true">
+                        プラムイン城陽
                     </button>
-                    <button class="floormap-tab-btn" data-floor="floor-2f">
-                        <span class="floor-icon"></span> 2F
-                    </button>
-                    <button class="floormap-tab-btn" data-floor="floor-3f">
-                        <span class="floor-icon"></span> 3F
+                    <button class="facility-tab-btn" data-facility="iris" role="tab" aria-selected="false">
+                        アイリスイン城陽
                     </button>
                 </div>
-                
-                <div class="floormap-grid">
-                    <!-- 1F -->
-                    <div class="floormap-item active" data-floormap-item data-floor-content="floor-1f">
-                        <div class="floormap-header" data-floormap-header>
-                            <h3 class="floormap-title">1F</h3>
-                            <span class="floormap-toggle-icon">▼</span>
+
+                <!-- プラムイン城陽 -->
+                <div class="facility-content active" data-facility-content="plum" role="tabpanel">
+                    <!-- フロアマップタブ -->
+                    <div class="floormap-tabs">
+                        <button class="floormap-tab-btn active" data-floor="floor-1f">
+                            <span class="floor-icon"></span> 1F
+                        </button>
+                        <button class="floormap-tab-btn" data-floor="floor-2f">
+                            <span class="floor-icon"></span> 2F
+                        </button>
+                        <button class="floormap-tab-btn" data-floor="floor-3f">
+                            <span class="floor-icon"></span> 3F
+                        </button>
+                    </div>
+
+                    <div class="floormap-grid">
+                        <!-- 1F -->
+                        <div class="floormap-item active" data-floormap-item data-floor-content="floor-1f">
+                            <div class="floormap-header" data-floormap-header>
+                                <h3 class="floormap-title">1F</h3>
+                                <span class="floormap-toggle-icon">▼</span>
+                            </div>
+                            <div class="floormap-content">
+                                <div class="floormap-legend">
+                                    <ul>
+                                        <li><span class="legend-number">1</span> レストラン</li>
+                                        <li><span class="legend-number">2</span> フロント</li>
+                                        <li><span class="legend-number">3</span> ロビー</li>
+                                        <li><span class="legend-number">4</span> ホール</li>
+                                        <li><span class="legend-number">5</span> 女子・男子トイレ</li>
+                                        <li><span class="legend-number">6</span> 野外活動ピロティ</li>
+                                    </ul>
+                                </div>
+                                <div class="floormap-image">
+                                    <img src="assets/map/pluminn_1f.png" alt="プラムイン城陽 1階フロアマップ" loading="lazy">
+                                </div>
+                            </div>
                         </div>
-                        <div class="floormap-content">
-                        <div class="floormap-legend">
-                            <ul>
-                                <li><span class="legend-number">1</span> レストラン</li>
-                                <li><span class="legend-number">2</span> フロント</li>
-                                <li><span class="legend-number">3</span> ロビー</li>
-                                <li><span class="legend-number">4</span> ホール</li>
-                                <li><span class="legend-number">5</span> 女子・男子トイレ</li>
-                                <li><span class="legend-number">6</span> 野外活動ピロティ</li>
-                            </ul>
+
+                        <!-- 2F -->
+                        <div class="floormap-item" data-floormap-item data-floor-content="floor-2f">
+                            <div class="floormap-header" data-floormap-header>
+                                <h3 class="floormap-title">2F</h3>
+                                <span class="floormap-toggle-icon">▼</span>
+                            </div>
+                            <div class="floormap-content">
+                                <div class="floormap-legend">
+                                    <ul>
+                                        <li><span class="legend-number">1</span> 女子浴室・更衣室</li>
+                                        <li><span class="legend-number">2</span> 男子浴室・更衣室</li>
+                                        <li><span class="legend-number">3</span> 女子・男子トイレ</li>
+                                        <li><span class="legend-number">4</span> ロビー</li>
+                                        <li><span class="legend-number">5</span> フリースペース</li>
+                                        <li><span class="legend-number">6</span> 宿泊室</li>
+                                    </ul>
+                                </div>
+                                <div class="floormap-image">
+                                    <img src="assets/map/pluminn_2f.png" alt="プラムイン城陽 2階フロアマップ" loading="lazy">
+                                </div>
+                            </div>
                         </div>
-                        <div class="floormap-image">
-                            <img src="assets/logos/floor-1f.jpg" alt="1階フロアマップ" loading="lazy">
-                        </div>
+
+                        <!-- 3F -->
+                        <div class="floormap-item" data-floormap-item data-floor-content="floor-3f">
+                            <div class="floormap-header" data-floormap-header>
+                                <h3 class="floormap-title">3F</h3>
+                                <span class="floormap-toggle-icon">▼</span>
+                            </div>
+                            <div class="floormap-content">
+                                <div class="floormap-legend">
+                                    <ul>
+                                        <li><span class="legend-number">1</span> BBQテラス</li>
+                                        <li><span class="legend-number">2</span> 研修室</li>
+                                        <li><span class="legend-number">3</span> 女子・男子トイレ</li>
+                                        <li><span class="legend-number">4</span> ロビー</li>
+                                        <li><span class="legend-number">5</span> 宿泊室</li>
+                                    </ul>
+                                </div>
+                                <div class="floormap-image">
+                                    <img src="assets/map/pluminn_3f.png" alt="プラムイン城陽 3階フロアマップ" loading="lazy">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- 2F -->
-                    <div class="floormap-item" data-floormap-item data-floor-content="floor-2f">
-                        <div class="floormap-header" data-floormap-header>
-                            <h3 class="floormap-title">2F</h3>
-                            <span class="floormap-toggle-icon">▼</span>
-                        </div>
-                        <div class="floormap-content">
-                        <div class="floormap-legend">
-                            <ul>
-                                <li><span class="legend-number">1</span> 女子浴室・更衣室</li>
-                                <li><span class="legend-number">2</span> 男子浴室・更衣室</li>
-                                <li><span class="legend-number">3</span> 女子・男子トイレ</li>
-                                <li><span class="legend-number">4</span> ロビー</li>
-                                <li><span class="legend-number">5</span> フリースペース</li>
-                                <li><span class="legend-number">6</span> 宿泊室</li>
-                            </ul>
-                        </div>
-                        <div class="floormap-image">
-                            <img src="assets/logos/floor-2f.jpg" alt="2階フロアマップ" loading="lazy">
-                        </div>
-                        </div>
+                </div>
+
+                <!-- アイリスイン城陽 -->
+                <div class="facility-content" data-facility-content="iris" role="tabpanel">
+                    <!-- フロアマップタブ -->
+                    <div class="floormap-tabs">
+                        <button class="floormap-tab-btn active" data-floor="iris-1f">
+                            <span class="floor-icon"></span> 1F
+                        </button>
+                        <button class="floormap-tab-btn" data-floor="iris-2f">
+                            <span class="floor-icon"></span> 2F
+                        </button>
                     </div>
-                    
-                    <!-- 3F -->
-                    <div class="floormap-item" data-floormap-item data-floor-content="floor-3f">
-                        <div class="floormap-header" data-floormap-header>
-                            <h3 class="floormap-title">3F</h3>
-                            <span class="floormap-toggle-icon">▼</span>
+
+                    <div class="floormap-grid">
+                        <!-- アイリス 1F -->
+                        <div class="floormap-item active" data-floormap-item data-floor-content="iris-1f">
+                            <div class="floormap-header" data-floormap-header>
+                                <h3 class="floormap-title">1F</h3>
+                                <span class="floormap-toggle-icon">▼</span>
+                            </div>
+                            <div class="floormap-content">
+                                <div class="floormap-legend">
+                                    <ul>
+                                        <li><span class="legend-number">1</span> 実演スペース</li>
+                                        <li><span class="legend-number">2</span> ショップ</li>
+                                        <li><span class="legend-number">3</span> ロビー＆ショップ</li>
+                                        <li><span class="legend-number">4</span> 宿泊室</li>
+                                        <li><span class="legend-number">5</span> 女子・男子トイレ</li>
+                                    </ul>
+                                </div>
+                                <div class="floormap-image">
+                                    <img src="assets/map/irisinn_1f.png" alt="アイリスイン城陽 1階フロアマップ" loading="lazy">
+                                </div>
+                            </div>
                         </div>
-                        <div class="floormap-content">
-                        <div class="floormap-legend">
-                            <ul>
-                                <li><span class="legend-number">1</span> BBQテラス</li>
-                                <li><span class="legend-number">2</span> 研修室</li>
-                                <li><span class="legend-number">3</span> 女子・男子トイレ</li>
-                                <li><span class="legend-number">4</span> ロビー</li>
-                                <li><span class="legend-number">5</span> 宿泊室</li>
-                            </ul>
-                        </div>
-                        <div class="floormap-image">
-                            <img src="assets/logos/floor-3f.jpg" alt="3階フロアマップ" loading="lazy">
-                        </div>
+
+                        <!-- アイリス 2F -->
+                        <div class="floormap-item" data-floormap-item data-floor-content="iris-2f">
+                            <div class="floormap-header" data-floormap-header>
+                                <h3 class="floormap-title">2F</h3>
+                                <span class="floormap-toggle-icon">▼</span>
+                            </div>
+                            <div class="floormap-content">
+                                <div class="floormap-legend">
+                                    <ul>
+                                        <li><span class="legend-number">1</span> 大浴場・小浴場</li>
+                                        <li><span class="legend-number">2</span> 女子・男子トイレ</li>
+                                        <li><span class="legend-number">3</span> 宿泊室</li>
+                                        <li><span class="legend-number">4</span> ロビー</li>
+                                        <li><span class="legend-number">5</span> LOGOS KID&rsquo;S MINI PARK</li>
+                                        <li><span class="legend-number">6</span> カフェ</li>
+                                    </ul>
+                                </div>
+                                <div class="floormap-image">
+                                    <img src="assets/map/irisinn_2f.png" alt="アイリスイン城陽 2階フロアマップ" loading="lazy">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

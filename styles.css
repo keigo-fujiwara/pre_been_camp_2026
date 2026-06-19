@@ -4087,6 +4087,70 @@ input:focus {
    フロアマップセクション
    ============================================ */
 
+/* 施設タブ：プラムイン / アイリスイン の切り替え（ピル型） */
+.facility-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 0 0 2rem;
+}
+
+.facility-tab-btn {
+  padding: 0.7rem 1.5rem;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-primary);
+  border-radius: 999px;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  font-family: inherit;
+}
+
+.facility-tab-btn:hover {
+  background-color: rgba(14, 139, 98, 0.08);
+}
+
+.facility-tab-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(14, 139, 98, 0.25);
+}
+
+.facility-tab-btn:focus {
+  outline: none;
+}
+
+.facility-tab-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* 施設コンテンツ（タブで切り替え） */
+.facility-content {
+  display: none;
+}
+
+.facility-content.active {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+/* SP版：施設タブを縦方向に詰めてタップ範囲を確保 */
+@media (max-width: 768px) {
+  .facility-tabs {
+    gap: 0.5rem;
+  }
+
+  .facility-tab-btn {
+    flex: 1 1 auto;
+    padding: 0.6rem 1rem;
+    font-size: 0.88rem;
+  }
+}
+
 /* フロアマップタブ */
 .floormap-tabs {
   display: flex;
