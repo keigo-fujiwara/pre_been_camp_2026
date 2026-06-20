@@ -101,6 +101,12 @@
                     </div>
                 </div>
                 
+                <!-- ============================================================
+                     【非表示】合宿ブログブロック
+                     ※ 削除はせず、一旦コメントアウトで非表示にしています。
+                     　 再表示したい場合は、この下のコメント記号を外してください。
+                     ============================================================ -->
+                <!--
                 <div class="blog-update-box" data-blog-update-toggle>
                     <div class="blog-update-header">
                         <span class="blog-update-title">📝 合宿ブログはこちら</span>
@@ -129,6 +135,27 @@
                                 <span class="blog-notice-icon">📝</span>
                                 <strong>広報利用する際は、内容および写真を変更する予定です。</strong>
                             </p>
+                        </div>
+                    </div>
+                </div>
+                -->
+
+                <!-- ============================================================
+                     お知らせセクション（器のみ）
+                     ・カードの中身は assets/news.js の NEWS_ITEMS 配列で管理します。
+                     ・内容を変更したいときは assets/news.js を編集してください。
+                     ・下の <div id="news-list"> の中身は JS が自動生成します。
+                     　（このHTMLを直接書き換える必要はありません）
+                     ============================================================ -->
+                <div class="news-box" data-news-toggle>
+                    <div class="news-toggle-header">
+                        <span class="news-toggle-title">📢 お知らせ</span>
+                        <span class="news-toggle-icon">▼</span>
+                    </div>
+                    <div class="news-content-wrapper">
+                        <p class="news-intro">合宿に関する大切なお知らせをこちらに掲載します。</p>
+                        <div class="news-list" id="news-list" data-news-list>
+                            <!-- カードはここに assets/news.js が自動で挿入します -->
                         </div>
                     </div>
                 </div>
@@ -1007,6 +1034,8 @@
     <script src="assets/sidebar.js"></script>
     <script src="script.js"></script>
     <script src="assets/footer.js"></script>
+    <!-- お知らせセクション（内容の編集は assets/news.js を参照） -->
+    <script src="assets/news.js"></script>
 
 </body>
 </html>
