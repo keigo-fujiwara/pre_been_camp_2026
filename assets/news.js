@@ -30,43 +30,33 @@ const NEWS_ITEMS = [
   {
     icon: '🎒',
     title: '忘れ物確認',
-    description: '出発前の持ち物チェックについてのお知らせをこちらに掲載します。（ここに本文が入ります）',
+    description: '出発前にもう一度忘れ物がないか、持ち物をチェックしよう！',
     linkLabel: '詳細を確認する',
-    linkUrl: '', // 例: '#items' や 'https://...' を入れてください
+    linkUrl: '#items', 
   },
 
-  // 2. マップの確認
+  // 2. 集合時間の確認
   {
-    icon: '🗺️',
-    title: 'マップの確認',
-    description: '会場のフロアマップ・集合場所についてのお知らせをこちらに掲載します。（ここに本文が入ります）',
+    icon: '⏰',
+    title: '集合時間の確認',
+    description: '13時から14時に間に合うように、もう一度スケジュールを確認しよう！',
     linkLabel: '詳細を確認する',
-    linkUrl: '#floormap', // 例: '#floormap' を入れてください
+    linkUrl: '#schedule', 
   },
 
   // 3. 電車の待ち合わせ
   {
     icon: '🚃',
     title: '電車の待ち合わせ',
-    description: '集合駅・待ち合わせ時間についてのお知らせをこちらに掲載します。（ここに本文が入ります）',
-    linkLabel: '詳細を確認する',
-    linkUrl: '', // 例: '#access' を入れてください
+    description: '**JR奈良線・城陽駅の改札前**でスタッフが待機しています。\n**13:37発のバス**までご案内します。\n※一緒に乗車しますので、降車のタイミングもご案内します。',
+    image: 'assets/guide/station.jpeg', // 例: 'assets/news/train.jpg' を入れてください。空なら画像枠が表示されます
   },
 
-  // 4. 集合時間の確認
-  {
-    icon: '⏰',
-    title: '集合時間の確認',
-    description: '当日の集合時間についてのお知らせをこちらに掲載します。（ここに本文が入ります）',
-    linkLabel: '詳細を確認する',
-    linkUrl: '', // 例: '#schedule' を入れてください
-  },
-
-  // 5. 引率講師の顔写真（← このカードには画像枠があります）
+  // 4. 引率講師の顔写真（← このカードには画像枠があります）
   {
     icon: '👨‍🏫',
     title: '引率講師の紹介',
-    description: '当日の引率講師をご紹介します。写真は後日掲載いたします。（ここに本文が入ります）',
+    description: '当日は〇〇先生が案内してくれます。この先生を目印に集合しよう！',
     
     image: '', // 例: 'assets/news/teacher.jpg' を入れてください。空なら画像枠が表示されます
   },
@@ -93,7 +83,18 @@ const NEWS_ITEMS = [
   function buildCard(item) {
     var icon = escapeHtml(item.icon || '📌');
     var title = escapeHtml(item.title || 'タイトル未設定');
-    var description = escapeHtml(item.description || 'こちらにお知らせ内容が入ります。（準備中）');
+    var description = function formatDescription(value) {
+  return escapeHtml(value || 'こちらにお知らせ内容が入ります。（準備中）')
+    .replace(/\n/g, '<br>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+}
+(item.description || 'こちらにお知らせ内容が入ります。（準備中）');
+    function formatDescription(value) {
+  return escapeHtml(value || 'こちらにお知らせ内容が入ります。（準備中）')
+    .replace(/\n/g, '<br>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+}
+
 
     // 画像枠（image プロパティを持つカードのみ）
     var imageHtml = '';
