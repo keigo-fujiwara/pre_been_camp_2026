@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // スクロールスパイ機能を初期化
   initScrollSpy();
   
-  // スケジュールタブの切り替え機能を初期化
+  // スケジュール：描画（schedule.js）→ SPカード → タブ切替（順序固定）
+  initScheduleMobileView();
   initScheduleTabs();
   
   // アクセスタブの切り替え機能を初期化
@@ -74,9 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // ブログボタンの公開時刻ゲート
   initBlogButtonGate();
 
-  // スケジュール表の SP 用カードビューを生成・同期
-  initScheduleMobileView();
-
 });
 
 /**
@@ -87,7 +85,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function initScheduleMobileView() {
   const wrapper = document.querySelector('.schedule-table-wrapper');
   if (!wrapper) return;
-  if (document.querySelector('.schedule-mobile-container')) return; // 二重生成防止
+
+  const existing = document.querySelector('.schedule-mobile-container');
+  if (existing) existing.remove();
 
   const rows = wrapper.querySelectorAll('.schedule-row');
   if (rows.length === 0) return;
@@ -148,25 +148,6 @@ function initScheduleMobileView() {
   });
 
   wrapper.parentNode.insertBefore(mobileContainer, wrapper.nextSibling);
-
-  // タブボタンとの同期：クリック後に SP ブロックの .active を更新
-  const tabButtons = document.querySelectorAll('.schedule-tabs .tab-btn');
-  const syncActive = () => {
-    document.querySelectorAll('.schedule-mobile').forEach((block) => {
-      const originalRow = document.getElementById(block.getAttribute('data-day'));
-      if (originalRow && originalRow.classList.contains('active')) {
-        block.classList.add('active');
-      } else {
-        block.classList.remove('active');
-      }
-    });
-  };
-  tabButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      // 既存のタブ切替ロジックが実行された後に同期させる
-      setTimeout(syncActive, 0);
-    });
-  });
 }
 
 /**
@@ -906,14 +887,14 @@ function initScrollSpy() {
  */
 function initScheduleTabs() {
   const tabButtons = document.querySelectorAll('.schedule-tabs .tab-btn');
-  const tabContents = document.querySelectorAll('.schedule-row.tab-content');
   
-  if (tabButtons.length === 0 || tabContents.length === 0) return;
+  if (tabButtons.length === 0) return;
   
   tabButtons.forEach(button => {
     button.addEventListener('click', function() {
       const targetTab = this.getAttribute('data-tab');
       const targetContent = document.getElementById(targetTab);
+      const tabContents = document.querySelectorAll('.schedule-row.tab-content');
       
       // 同じタブを押した場合は閉じる（トグル機能）
       if (this.classList.contains('active')) {
@@ -922,6 +903,9 @@ function initScheduleTabs() {
         if (targetContent) {
           targetContent.classList.remove('active');
         }
+        document.querySelectorAll('.schedule-mobile').forEach((block) => {
+          block.classList.remove('active');
+        });
       } else {
         // すべてのタブボタンの絵文字を📅に戻す
         tabButtons.forEach(btn => {
@@ -936,6 +920,15 @@ function initScheduleTabs() {
         if (targetContent) {
           targetContent.classList.add('active');
         }
+
+        // SPカード表示も同期
+        document.querySelectorAll('.schedule-mobile').forEach((block) => {
+          if (targetContent && block.getAttribute('data-day') === targetContent.id) {
+            block.classList.add('active');
+          } else {
+            block.classList.remove('active');
+          }
+        });
       }
     });
   });
