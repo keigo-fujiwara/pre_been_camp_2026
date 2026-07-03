@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>東京・横浜チーム到着スケジュール | BeEngineer Programming Camp</title>
+    <title>東京・横浜チーム 行き帰りスケジュール | BeEngineer Programming Camp</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -37,349 +37,49 @@
                 <div class="hero-content">
                     <div class="hero-panel">
                         <span class="staff-badge">🔒 スタッフ専用</span>
-                        <h1 class="hero-title">東京・横浜チーム<br>到着スケジュール</h1>
-                        <p class="hero-subtitle">BeEngineer Programming Camp<br>1日目アクセスルート</p>
-                        <div class="hero-date">8/8<small>(土)</small></div>
+                        <h1 class="hero-title">東京・横浜チーム<br>行き帰りスケジュール</h1>
+                        <p class="hero-subtitle">BeEngineer Programming Camp<br>飯田橋校・横浜校（合宿参加者向け）</p>
+                        <div class="hero-date">8/8<small>(土)</small> 行き ／ 8/10<small>(月)</small> 帰り</div>
                         <div class="hero-location">📍 ロゴスランド京都（京都府城陽市）</div>
                     </div>
                 </div>
             </section>
 
-            <!-- 東京・横浜チームの到着スケジュール -->
+            <!-- 東京・横浜チーム 行き帰りスケジュール -->
             <section id="tokyo-schedule" class="section">
                 <div class="container">
-                    <h2 class="section-title">到着ルート 3パターン</h2>
+                    <h2 class="section-title">行き帰りタイムスケジュール</h2>
                     <p class="section-desc">
-                        1日目（8/8）の到着時刻別のアクセスルートです。各スタッフの出発地と到着時刻に合わせて選択してください。
+                        合宿参加者（飯田橋校・横浜校）の移動詳細と、保護者へのお願い事項です。
                     </p>
 
-                    <!-- 到着時刻別タブ -->
                     <div class="arrival-tabs">
-                        <button class="arrival-tab-btn active" data-arrival-tab="pattern1">
-                            <span class="arrival-time">13:48着</span>
-                            <span class="arrival-label">正規 14:00着ver（東京発）</span>
+                        <button class="arrival-tab-btn active" data-arrival-tab="outbound">
+                            <span class="arrival-time">8/8(土)</span>
+                            <span class="arrival-label">行き（のぞみ353号）</span>
                         </button>
-                        <button class="arrival-tab-btn" data-arrival-tab="pattern2">
-                            <span class="arrival-time">15:15着</span>
-                            <span class="arrival-label">新横浜発</span>
-                        </button>
-                        <button class="arrival-tab-btn" data-arrival-tab="pattern3">
-                            <span class="arrival-time">17:15着</span>
-                            <span class="arrival-label">東京発（遅め）</span>
+                        <button class="arrival-tab-btn" data-arrival-tab="return">
+                            <span class="arrival-time">8/10(月)</span>
+                            <span class="arrival-label">帰り（のぞみ440号）</span>
                         </button>
                     </div>
 
-                    <!-- パターン1: 東京発 13:48着 -->
-                    <div class="arrival-content active" id="pattern1">
-                        <div class="route-summary">
-                            <div class="summary-item">
-                                <span class="summary-label">出発駅</span>
-                                <span class="summary-value">東京駅</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">発着時刻</span>
-                                <span class="summary-value">10:39発 → 13:48着</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">所要時間</span>
-                                <span class="summary-value">3時間9分</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">乗換回数</span>
-                                <span class="summary-value">2回</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">総額</span>
-                                <span class="summary-value fare">14,790円</span>
-                            </div>
-                        </div>
-                        
-                        <div class="route-detail">
-                            <div class="route-step">
-                                <div class="step-marker start">出発</div>
-                                <div class="step-content">
-                                    <div class="step-station">東京駅 15番線発</div>
-                                    <div class="step-train">のぞみ137号 (N700系) (博多行) 513.6km</div>
-                                    <div class="step-time">10:39-12:51［132分］</div>
-                                    <div class="step-fare">8,580円（指定席 6,010円）</div>
-                                </div>
-                            </div>
-                            
-                            <div class="route-step">
-                                <div class="step-marker transfer">乗換</div>
-                                <div class="step-content">
-                                    <div class="step-station">京都駅 13番線着・10番線発</div>
-                                    <div class="step-wait">乗換10分+待ち5分</div>
-                                    <div class="step-train">奈良線Ｄみやこ路快速157号 (奈良行) 20.2km</div>
-                                    <div class="step-time">13:06-13:29［23分］</div>
-                                    <div class="step-fare">自由席</div>
-                                </div>
-                            </div>
-                            
-                            <div class="route-step">
-                                <div class="step-marker transfer">乗換</div>
-                                <div class="step-content">
-                                    <div class="step-station">城陽駅/ＪＲ城陽駅 2番線着・1番のりば発</div>
-                                    <div class="step-wait">乗換6分+待ち2分</div>
-                                    <div class="step-train">[京都京阪バス] 鴻ノ巣山運動公園近鉄寺田線 (プラムイン城陽行)</div>
-                                    <div class="step-time">13:37-13:48［11分］</div>
-                                    <div class="step-fare">200円</div>
-                                </div>
-                            </div>
-                            
-                            <div class="route-step">
-                                <div class="step-marker end">到着</div>
-                                <div class="step-content">
-                                    <div class="step-station">プラムイン城陽</div>
-                                    <div class="step-note">✅ 正規時刻（14:00）に間に合います</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="arrival-content active" id="outbound">
+                        <div data-travel-schedule="outbound"></div>
                     </div>
 
-                    <!-- パターン2: 新横浜発 15:15着 -->
-                    <div class="arrival-content" id="pattern2">
-                        <div class="route-summary">
-                            <div class="summary-item">
-                                <span class="summary-label">出発駅</span>
-                                <span class="summary-value">新横浜駅</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">発着時刻</span>
-                                <span class="summary-value">12:18発 → 15:15着</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">所要時間</span>
-                                <span class="summary-value">2時間57分</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">乗換回数</span>
-                                <span class="summary-value">2回</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">総額</span>
-                                <span class="summary-value fare">14,230円</span>
-                            </div>
-                        </div>
-                        
-                        <div class="route-detail">
-                            <div class="route-step">
-                                <div class="step-marker start">出発</div>
-                                <div class="step-content">
-                                    <div class="step-station">新横浜駅 4番線発</div>
-                                    <div class="step-train">のぞみ149号 (N700系) (博多行) 484.8km</div>
-                                    <div class="step-time">12:18-14:15［117分］</div>
-                                    <div class="step-fare">8,360円（指定席 5,670円）</div>
-                                </div>
-                            </div>
-                            
-                            <div class="route-step">
-                                <div class="step-marker transfer">乗換</div>
-                                <div class="step-content">
-                                    <div class="step-station">京都駅 13番線着・10番線発</div>
-                                    <div class="step-wait">乗換10分+待ち11分</div>
-                                    <div class="step-train">奈良線Ｄみやこ路快速163号 (奈良行) 20.2km</div>
-                                    <div class="step-time">14:36-14:59［23分］</div>
-                                    <div class="step-fare">自由席</div>
-                                </div>
-                            </div>
-                            
-                            <div class="route-step">
-                                <div class="step-marker transfer">乗換</div>
-                                <div class="step-content">
-                                    <div class="step-station">城陽駅/ＪＲ城陽駅 2番線着・2番のりば発</div>
-                                    <div class="step-wait">乗換6分+待ち2分</div>
-                                    <div class="step-train">[京都京阪バス] プラムイン城陽長池線 (プラムイン城陽行)</div>
-                                    <div class="step-time">15:07-15:15［8分］</div>
-                                    <div class="step-fare">200円</div>
-                                </div>
-                            </div>
-                            
-                            <div class="route-step">
-                                <div class="step-marker end">到着</div>
-                                <div class="step-content">
-                                    <div class="step-station">プラムイン城陽</div>
-                                    <div class="step-note">⚠️ 開会式（14:00～）に遅刻</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="arrival-content" id="return">
+                        <div data-travel-schedule="return"></div>
                     </div>
 
-                    <!-- パターン3: 東京発 17:15着 -->
-                    <div class="arrival-content" id="pattern3">
-                        <div class="route-summary">
-                            <div class="summary-item">
-                                <span class="summary-label">出発駅</span>
-                                <span class="summary-value">東京駅</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">発着時刻</span>
-                                <span class="summary-value">14:12発 → 17:15着</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">所要時間</span>
-                                <span class="summary-value">3時間3分</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">乗換回数</span>
-                                <span class="summary-value">2回</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">総額</span>
-                                <span class="summary-value fare">14,790円</span>
-                            </div>
-                        </div>
-                        
-                        <div class="route-detail">
-                            <div class="route-step">
-                                <div class="step-marker start">出発</div>
-                                <div class="step-content">
-                                    <div class="step-station">東京駅 18番線発</div>
-                                    <div class="step-train">のぞみ39号 (N700系) (博多行) 513.6km</div>
-                                    <div class="step-time">14:12-16:23［131分］</div>
-                                    <div class="step-fare">8,580円（指定席 6,010円）</div>
-                                </div>
-                            </div>
-                            
-                            <div class="route-step">
-                                <div class="step-marker transfer">乗換</div>
-                                <div class="step-content">
-                                    <div class="step-station">京都駅 14番線着・10番線発</div>
-                                    <div class="step-wait">乗換10分+待ち3分</div>
-                                    <div class="step-train">奈良線Ｄみやこ路快速171号 (奈良行) 20.2km</div>
-                                    <div class="step-time">16:36-16:59［23分］</div>
-                                    <div class="step-fare">自由席</div>
-                                </div>
-                            </div>
-                            
-                            <div class="route-step">
-                                <div class="step-marker transfer">乗換</div>
-                                <div class="step-content">
-                                    <div class="step-station">城陽駅/ＪＲ城陽駅 2番線着・2番のりば発</div>
-                                    <div class="step-wait">乗換6分+待ち2分</div>
-                                    <div class="step-train">[京都京阪バス] プラムイン城陽長池線 (プラムイン城陽行)</div>
-                                    <div class="step-time">17:07-17:15［8分］</div>
-                                    <div class="step-fare">200円</div>
-                                </div>
-                            </div>
-                            
-                            <div class="route-step">
-                                <div class="step-marker end">到着</div>
-                                <div class="step-content">
-                                    <div class="step-station">プラムイン城陽</div>
-                                    <div class="step-note">⚠️ 夕食（17:00～）に遅刻</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 3日目の帰宅ルート -->
-            <section id="return-schedule" class="section">
-                <div class="container">
-                    <h2 class="section-title">3日目 帰宅ルート</h2>
-                    <p class="section-desc">
-                        3日目（8/10）閉会式後の東京方面への帰宅ルートです。
-                    </p>
-
-                    <div class="return-content">
-                        <div class="route-summary">
-                            <div class="summary-item">
-                                <span class="summary-label">出発地</span>
-                                <span class="summary-value">城陽駅</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">到着地</span>
-                                <span class="summary-value">東京駅</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">発着時刻</span>
-                                <span class="summary-value">14:14発 → 17:45着</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">所要時間</span>
-                                <span class="summary-value">3時間31分</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">乗換回数</span>
-                                <span class="summary-value">1回</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">総額</span>
-                                <span class="summary-value fare">14,750円</span>
-                            </div>
-                        </div>
-                        
-                        <div class="route-detail">
-                            <div class="route-step">
-                                <div class="step-marker start">出発</div>
-                                <div class="step-content">
-                                    <div class="step-station">城陽駅 1番線発</div>
-                                    <div class="step-train">奈良線 (京都行) 20.2km</div>
-                                    <div class="step-time">14:14-14:43［29分］</div>
-                                    <div class="step-fare">380円</div>
-                                    <div class="step-note">✅ 閉会式・昼食後、現地タクシーで城陽駅へ（13:55発）</div>
-                                </div>
-                            </div>
-                            
-                            <div class="route-step">
-                                <div class="step-marker transfer">乗換</div>
-                                <div class="step-content">
-                                    <div class="step-station">京都駅 9番線着・12番線発</div>
-                                    <div class="step-wait">乗換時間：約45分</div>
-                                    <div class="step-train">のぞみ156号 (N700系) (東京行) 513.6km</div>
-                                    <div class="step-time">15:30-17:45［135分］</div>
-                                    <div class="step-fare">14,370円（指定席 6,010円）</div>
-                                </div>
-                            </div>
-                            
-                            <div class="route-step">
-                                <div class="step-marker end">到着</div>
-                                <div class="step-content">
-                                    <div class="step-station">東京駅 17番線着</div>
-                                    <div class="step-note">🎉 お疲れ様でした！</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 注意事項 -->
-                        <div class="return-notes">
-                            <h3>📝 帰宅時のスケジュール・注意事項</h3>
-                            <div class="schedule-timeline">
-                                <div class="timeline-item">
-                                    <span class="timeline-time">13:00</span>
-                                    <span class="timeline-event">閉会式後、昼食</span>
-                                </div>
-                                <div class="timeline-item">
-                                    <span class="timeline-time">13:55</span>
-                                    <span class="timeline-event">プラムイン城陽エントランス集合 → 現地タクシーで城陽駅へ</span>
-                                </div>
-                                <div class="timeline-item">
-                                    <span class="timeline-time">14:14</span>
-                                    <span class="timeline-event">城陽駅発（奈良線）</span>
-                                </div>
-                                <div class="timeline-item">
-                                    <span class="timeline-time">14:43</span>
-                                    <span class="timeline-event">京都駅着</span>
-                                </div>
-                                <div class="timeline-item">
-                                    <span class="timeline-time">15:30</span>
-                                    <span class="timeline-event">京都駅発（のぞみ156号）</span>
-                                </div>
-                                <div class="timeline-item">
-                                    <span class="timeline-time">17:45</span>
-                                    <span class="timeline-event">東京駅着</span>
-                                </div>
-                            </div>
-                            <ul class="notes-list">
-                                <li><strong>タクシー手配</strong>：現地で手配済み（13:55発）</li>
-                                <li><strong>荷物</strong>：13:00の昼食前に荷物をまとめ、忘れ物がないか確認してください</li>
-                                <li><strong>乗車券</strong>：事前に購入しておくとスムーズです</li>
-                                <li><strong>京都駅での乗換</strong>：45分の余裕があるので、お土産購入も可能です</li>
-                                <li><strong>新幹線指定席</strong>：混雑が予想されるため、早めの予約をおすすめします</li>
-                            </ul>
-                        </div>
+                    <div class="travel-staff-notes">
+                        <h3>📋 スタッフ向けメモ</h3>
+                        <ul>
+                            <li><strong>行き：</strong>東京駅 18番線・6号車で合流 → 新横浜で乗車確認 → 13:15 プラムイン城陽着</li>
+                            <li><strong>帰り：</strong>13:00 現地昼食（各自負担）→ 14:29 バス発 → 16:06 京都発 → 18:02 新横浜 / 18:21 東京で解散</li>
+                            <li><strong>連絡：</strong>新幹線乗車前・下車前に参加者へ声かけ。座席番号・LINE登録の確認を</li>
+                            <li><strong>ICカード：</strong>JR在来線・バス利用のため、1000円以上チャージを事前案内</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -390,6 +90,8 @@
     </div>
 
     <script src="../assets/sidebar.js"></script>
+    <script src="tokyo-travel-data.js"></script>
+    <script src="tokyo-travel.js"></script>
     <script src="../script.js"></script>
     <script src="auth.js"></script>
     <script src="../assets/footer.js"></script>
