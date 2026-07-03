@@ -6,6 +6,8 @@
 // 下の SCHEDULE_DAYS 配列を書き換えるだけで TOP ページの
 // 3日間スケジュール表が更新されます。
 //
+// ※ スタッフ向けは staff/schedule-data.js（STAFF_SCHEDULE_DAYS）で別管理です。
+//
 // 元資料: 26BeEn合宿スケジュール - スケジュール（生徒）.pdf
 //
 // ・time     … 表示用の時間帯（例: "13:00～14:00"）
