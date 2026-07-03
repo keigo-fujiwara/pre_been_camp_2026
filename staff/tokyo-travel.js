@@ -26,7 +26,7 @@
     return (
       '<table class="travel-schedule-table">' +
       '<thead><tr>' +
-      '<th>時間</th><th>移動詳細</th><th>お願い・ご確認事項</th>' +
+      '<th>時間</th><th>移動詳細</th><th>備考欄</th>' +
       '</tr></thead>' +
       '<tbody>' + rows + '</tbody>' +
       '</table>'
