@@ -73,6 +73,7 @@
           </li>
           <li><a href="${anchor('guide')}">ご案内</a></li>
           <li><a href="${anchor('overview')}">日程・会場</a></li>
+          <li><a href="${anchor('teachers')}">引率講師の紹介</a></li>
           <li><a href="${anchor('program')}">学習内容</a></li>
           <li><a href="${anchor('schedule')}">スケジュール</a></li>
           <li><a href="${anchor('floormap')}">フロアマップ</a></li>
