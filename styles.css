@@ -1,4 +1,4 @@
-/* ============================================
+﻿/* ============================================
    BeEngineer Programming Camp - Styles
    ロゴスランド風デザイン
    ============================================ */
@@ -1154,73 +1154,6 @@ a {
 
 /* 講師カードのグリッド（2カラム） */
 .teachers-grid {
-   お知らせセクション
-   ============================================ */
-
-.news-box {
-  background: linear-gradient(135deg, #FFF8EF 0%, #FFEFD9 100%);
-  border: 3px solid var(--color-secondary);
-  border-radius: var(--border-radius);
-  padding: 0;
-  margin-top: 2rem;
-  box-shadow: 0 6px 25px rgba(244, 127, 46, 0.15);
-  overflow: hidden;
-}
-
-/* 開閉ヘッダー（LINEセクションと同じ挙動） */
-.news-toggle-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.news-toggle-header:hover {
-  background-color: rgba(244, 127, 46, 0.1);
-}
-
-.news-toggle-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: var(--color-secondary);
-}
-
-.news-toggle-icon {
-  font-size: 1.2rem;
-  color: var(--color-secondary);
-  transition: transform 0.3s ease;
-}
-
-.news-box.active .news-toggle-icon {
-  transform: rotate(180deg);
-}
-
-/* 開閉する中身 */
-.news-content-wrapper {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
-  padding: 0 2rem;
-}
-
-.news-box.active .news-content-wrapper {
-  max-height: 4000px;
-  opacity: 1;
-  padding: 0 2rem 2rem 2rem;
-}
-
-.news-intro {
-  text-align: center;
-  font-size: 1.05rem;
-  color: var(--color-text-light);
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
-
-.news-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
@@ -1241,18 +1174,6 @@ a {
 }
 
 .teacher-card:hover {
-.news-card {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-white);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: var(--shadow-soft);
-  border-top: 4px solid var(--color-primary);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.news-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
 }
@@ -1275,28 +1196,6 @@ a {
 }
 
 .teacher-photo-circle img {
-/* カードごとにアクセントカラーを緑・オレンジで交互に */
-.news-card:nth-child(even) {
-  border-top-color: var(--color-secondary);
-}
-
-.news-card-icon {
-  font-size: 2.2rem;
-  line-height: 1;
-  margin-bottom: 0.8rem;
-}
-
-/* 画像枠（顔写真など） */
-.news-card-image {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  background-color: var(--color-pastel-green);
-}
-
-.news-card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1514,6 +1413,178 @@ a {
 /* モーダル表示中は背面のスクロールを止める */
 body.teacher-modal-open {
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .teachers-tabs {
+    gap: 0.5rem;
+  }
+
+  .teachers-tab-btn {
+    flex: 1 1 auto;
+    padding: 0.6rem 1rem;
+    font-size: 0.88rem;
+  }
+
+  .teachers-grid {
+    gap: 1rem;
+  }
+
+  .teacher-card {
+    padding: 1.3rem 0.8rem;
+  }
+
+  .teacher-photo-circle {
+    width: 90px;
+    height: 90px;
+    border-width: 3px;
+  }
+
+  .teacher-photo-icon {
+    font-size: 2rem;
+  }
+
+  .teacher-card-name {
+    font-size: 1rem;
+    margin: 0.9rem 0 1rem;
+  }
+
+  .teacher-detail-btn {
+    padding: 0.55rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .teacher-modal-panel {
+    padding: 2.2rem 1.3rem 1.5rem;
+  }
+
+  .teacher-modal-photo.teacher-photo-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .teacher-modal-name {
+    font-size: 1.3rem;
+  }
+}
+
+/* ============================================
+   お知らせセクション
+   ============================================ */
+
+.news-box {
+  background: linear-gradient(135deg, #FFF8EF 0%, #FFEFD9 100%);
+  border: 3px solid var(--color-secondary);
+  border-radius: var(--border-radius);
+  padding: 0;
+  margin-top: 2rem;
+  box-shadow: 0 6px 25px rgba(244, 127, 46, 0.15);
+  overflow: hidden;
+}
+
+/* 開閉ヘッダー（LINEセクションと同じ挙動） */
+.news-toggle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.news-toggle-header:hover {
+  background-color: rgba(244, 127, 46, 0.1);
+}
+
+.news-toggle-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+.news-toggle-icon {
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+  transition: transform 0.3s ease;
+}
+
+.news-box.active .news-toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* 開閉する中身 */
+.news-content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
+  padding: 0 2rem;
+}
+
+.news-box.active .news-content-wrapper {
+  max-height: 4000px;
+  opacity: 1;
+  padding: 0 2rem 2rem 2rem;
+}
+
+.news-intro {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  border-top: 4px solid var(--color-primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* カードごとにアクセントカラーを緑・オレンジで交互に */
+.news-card:nth-child(even) {
+  border-top-color: var(--color-secondary);
+}
+
+.news-card-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  margin-bottom: 0.8rem;
+}
+
+/* 画像枠（顔写真など） */
+.news-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: var(--color-pastel-green);
+}
+
+.news-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* 画像未設定時のプレースホルダー（あとから差し替えやすい枠） */
 .news-card-image-placeholder {
   display: flex;
@@ -1594,58 +1665,7 @@ body.teacher-modal-open {
   padding: 2rem 0;
 }
 
-/* スマホ表示の調整 */
 @media (max-width: 768px) {
-  .teachers-tabs {
-    gap: 0.5rem;
-  }
-
-  .teachers-tab-btn {
-    flex: 1 1 auto;
-    padding: 0.6rem 1rem;
-    font-size: 0.88rem;
-  }
-
-  /* スマホでも2カラムを維持（見やすいよう余白と写真サイズを縮小） */
-  .teachers-grid {
-    gap: 1rem;
-  }
-
-  .teacher-card {
-    padding: 1.3rem 0.8rem;
-  }
-
-  .teacher-photo-circle {
-    width: 90px;
-    height: 90px;
-    border-width: 3px;
-  }
-
-  .teacher-photo-icon {
-    font-size: 2rem;
-  }
-
-  .teacher-card-name {
-    font-size: 1rem;
-    margin: 0.9rem 0 1rem;
-  }
-
-  .teacher-detail-btn {
-    padding: 0.55rem 1.2rem;
-    font-size: 0.85rem;
-  }
-
-  .teacher-modal-panel {
-    padding: 2.2rem 1.3rem 1.5rem;
-  }
-
-  .teacher-modal-photo.teacher-photo-circle {
-    width: 130px;
-    height: 130px;
-  }
-
-  .teacher-modal-name {
-    font-size: 1.3rem;
   .news-toggle-header {
     padding: 1.2rem 1.2rem;
   }
@@ -1666,7 +1686,6 @@ body.teacher-modal-open {
     grid-template-columns: 1fr;
   }
 }
-
 /* ============================================
    開催情報バー（開催概要）
    ============================================ */
