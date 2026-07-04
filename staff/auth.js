@@ -201,8 +201,7 @@ function updateTabEmoji(button, isActive) {
 }
 
 /**
- * 東京・横浜チームの到着スケジュールタブ機能
- * 3パターンの到着ルートをタブで切り替え
+ * 東京・横浜チーム 行き帰りタブ切替
  */
 function initArrivalTabs() {
     const tabButtons = document.querySelectorAll('.arrival-tab-btn');

@@ -51,7 +51,7 @@
                 <div class="container">
                     <h2 class="section-title">詳細タイムテーブル</h2>
                     <p class="section-desc">
-                        スタッフ向けの詳細なスケジュールです。準備物や担当者の情報も含まれています。
+                        スタッフ向けの詳細スケジュールです。生徒向け（TOP）とは別データで管理しています。
                     </p>
 
                     <!-- タブメニュー -->
@@ -79,65 +79,8 @@
                                         <th class="note-col">担当・備考</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="time-col">12:00<br>～13:00</td>
-                                        <td class="location-col">スタッフ<br>準備エリア</td>
-                                        <td class="activity-col">🍽️ スタッフ現地集合・始礼・準備</td>
-                                        <td class="note-col"><strong>連絡手段:</strong><br>・参加者専用LINE確認<br>・緊急連絡対応（藤原）</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">13:00<br>～14:00</td>
-                                        <td class="location-col">受付<br>エントランス</td>
-                                        <td class="activity-col">🚗 集合</td>
-                                        <td class="note-col"><strong>現地担当:</strong> 藤原以外（生徒受け入れなど）<br><br><strong>駅担当:</strong> 藤原<br><strong>JR城陽:</strong> バス13:37発（13:07発）</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">14:00<br>～15:00</td>
-                                        <td class="location-col">研修室1～3</td>
-                                        <td class="activity-col">🎤 開会式</td>
-                                        <td class="note-col">・アイスブレイク<br>・クラス分け<br>・班分け<br>・班長決め<br>・ルール確認<br>・オリテ<br>・Wi-Fi接続</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">15:00<br>～16:00</td>
-                                        <td class="location-col">研修室1～4</td>
-                                        <td class="activity-col">💻 授業（4区画）</td>
-                                        <td class="note-col"><strong>授業担当:</strong> 井ノ本<br><strong>サポーター:</strong> 全員<br><strong>テーマ:</strong><br>・Colabの使い方<br>・ファイルの作成<br>・動作確認
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">16:00<br>～17:00</td>
-                                        <td class="location-col">研修室1,2<br>研修室3,4</td>
-                                        <td class="activity-col">💻 授業（4区画）</td>
-                                        <td class="note-col"><strong>テーマ:機械学習の基礎 - 手書き文字認識</strong><br>・機械学習の全体像<br>・学習データの準備<br>
-                                            <br><strong>授業担当:</strong> 井ノ本<br><strong>サポーター:</strong> 黒田・中村・市川<br><strong>教室:</strong> 研修室1,2<br><br><strong>授業担当:</strong> 藤原<br><strong>サポーター:</strong> 諏訪・前田<br><strong>教室:</strong> 研修室3</td>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">17:00<br>～18:00</td>
-                                        <td class="location-col">1Fレストラン</td>
-                                        <td class="activity-col">🍜 夕食</td>
-                                        <td class="note-col"><strong>スタッフ:</strong> 生徒と食事（1名写真係）<br><strong>藤原:</strong><br>・点呼確認<br>・班行動確認<br>・後で食事</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">18:00<br>～19:00</td>
-                                        <td class="location-col">各教室</td>
-                                        <td class="activity-col">☕ 休憩</td>
-                                        <td class="note-col">・各教室スタッフ配置（1名以上）<br>・班行動忘れずす</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">19:00<br>～21:00</td>
-                                        <td class="location-col">研修室1,2<br>研修室3,4</td>
-                                        <td class="activity-col">💻 授業（4区画）</td>
-                                        <td class="note-col"><strong>テーマ:機械学習の基礎 - 手書き文字認識</strong><br>・前処理<br>・モデルの設計<br>
-                                            <br><strong>授業担当:</strong> 井ノ本<br><strong>サポーター:</strong> 黒田・中村・市川<br><strong>教室:</strong> 研修室1,2<br><br><strong>授業担当:</strong> 藤原<br><strong>サポーター:</strong> 諏訪・前田<br><strong>教室:</strong> 研修室3</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">21:00<br>～24:00</td>
-                                        <td class="location-col">各部屋<br>大浴場</td>
-                                        <td class="activity-col">🌙 班長会議・就寝準備・質問etc</td>
-                                        <td class="note-col"><strong>21:00～:</strong> 班長会議<br><strong>21:00～22:00:</strong> 男子・大浴場<br><strong>22:00～:</strong> 点呼<br><br><strong>スタッフ終礼</strong></td>
-                                    </tr>
+                                <tbody data-staff-schedule-tbody="day1">
+                                    <!-- staff/schedule.js が staff/schedule-data.js から描画 -->
                                 </tbody>
                             </table>
                         </div>
@@ -153,58 +96,8 @@
                                         <th class="note-col">担当・備考</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="time-col">6:00<br>～6:30</td>
-                                        <td class="location-col">各部屋</td>
-                                        <td class="activity-col">🌅 起床</td>
-                                        <td class="note-col">各班で動き統一</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">6:30<br>～7:30</td>
-                                        <td class="location-col">1Fレストラン</td>
-                                        <td class="activity-col">🍳 点呼・朝食</td>
-                                        <td class="note-col"><strong>スタッフ:</strong><br>・生徒と食事<br>・1名写真係<br><br><strong>藤原:</strong><br>・点呼確認<br>・班行動確認<br>・後で食事</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">7:30<br>～9:00</td>
-                                        <td class="location-col">研修室1～3</td>
-                                        <td class="activity-col">🌸 朝活（研修室1～3）</td>
-                                        <td class="note-col">合同</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">9:00<br>～12:00</td>
-                                        <td class="location-col">研修室1～3</td>
-                                        <td class="activity-col">💻 授業（研修室1～3）</td>
-                                        <td class="note-col"><strong>テーマ:機械学習の基礎 - 手書き文字認識</strong><br>・学習結果の確認<br>・機械学習のテクニック - データ拡張<br>・機械学習のテクニック - 学習パラメータ<br>
-                                            <br><strong>授業担当:</strong> 井ノ本<br><strong>サポーター:</strong> 黒田・中村・市川<br><strong>教室:</strong> 研修室1,2<br><br><strong>授業担当:</strong> 藤原<br><strong>サポーター:</strong> 諏訪・前田<br><strong>教室:</strong> 研修室3<br><br>⚠️ <strong>10:00～11:00 屋内で楽器演奏あり（音量に注意）</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">12:00<br>～13:00</td>
-                                        <td class="location-col">研修室1～3</td>
-                                        <td class="activity-col">🍜 昼食</td>
-                                        <td class="note-col"><strong>スタッフ:</strong><br>・生徒と食事<br>・1名写真係<br><br><strong>藤原:</strong><br>・点呼確認<br>・班行動確認<br>・後で食事</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">13:00<br>～18:00</td>
-                                        <td class="location-col">研修室1～3</td>
-                                        <td class="activity-col">💻 授業<br>（14:00～研修室4使用可能）</td>
-                                        <td class="note-col"><strong>テーマ:機械学習の基礎 - 手書き文字認識</strong><br>・機械学習のテクニック - モデルの保存<br><br>
-                                            <strong>テーマ:ベースコードの作成 - グレースケール画像の自動色付けモデル</strong><br>・グレースケール画像の自動色付け<br>・使用するデータセットの確認<br>・ベースコードの作成<br>
-                                            <br><strong>授業担当:</strong> 井ノ本<br><strong>サポーター:</strong> 黒田・中村・市川<br><strong>教室:</strong> 研修室1,2<br><br><strong>授業担当:</strong> 藤原<br><strong>サポーター:</strong> 諏訪・前田<br><strong>教室:</strong> 研修室3<br><br>⚠️ <strong>13:00～14:00 屋内で楽器演奏あり（音量に注意）</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">18:00<br>～21:00</td>
-                                        <td class="location-col">外<br>ピラミッドTAKIBI<br>1～4</td>
-                                        <td class="activity-col">🍖 BBQ</td>
-                                        <td class="note-col">・座席は自由<br>・アレルギー類に注意する<br><br>・疲労&非日常からくる羽目外す子に注意<br>・締めるべきときは締める（ルールの徹底）<br><br>コミュニケーションで盛り上げる</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">21:00<br>～24:00</td>
-                                        <td class="location-col">各部屋<br>大浴場</td>
-                                        <td class="activity-col">🌙 班長会議・就寝準備・質問etc</td>
-                                        <td class="note-col"><strong>21:00～:</strong> 班長会議<br><strong>21:00～22:00:</strong> 男子・大浴場<br><strong>22:00～:</strong> 点呼<br><br><strong>スタッフ終礼</strong></td>
-                                    </tr>
+                                <tbody data-staff-schedule-tbody="day2">
+                                    <!-- staff/schedule.js が staff/schedule-data.js から描画 -->
                                 </tbody>
                             </table>
                         </div>
@@ -220,43 +113,8 @@
                                         <th class="note-col">担当・備考</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="time-col">6:00<br>～6:30</td>
-                                        <td class="location-col">各部屋</td>
-                                        <td class="activity-col">🌅 起床</td>
-                                        <td class="note-col">各班で動き統一</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">6:30～7:30</td>
-                                        <td class="location-col">1Fレストラン</td>
-                                        <td class="activity-col">🍳 点呼・朝食</td>
-                                        <td class="note-col"><strong>スタッフ:</strong><br>・生徒と食事<br>・1名写真係<br>・中村帰宅！（お疲れ様でした～）<br><br><strong>藤原:</strong><br>・点呼確認<br>・班行動確認<br>・後で食事</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">7:30<br>～9:00</td>
-                                        <td class="location-col">研修室1～3</td>
-                                        <td class="activity-col">🌸 朝活（研修室1～3）</td>
-                                        <td class="note-col">荷物を持って研修室へ</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">9:00<br>～12:00</td>
-                                        <td class="location-col">研修室1～4</td>
-                                        <td class="activity-col">💻 授業（4区画）</td>
-                                        <td class="note-col"><strong>テーマ:モデルの保存〜Gitの関連を1周やってみる</strong><br><br><strong>授業担当:</strong> 井ノ本<br><strong>サポーター:</strong> 全員<br><br>⚠️ <strong>11:00～12:30 屋内で楽器演奏あり（音量に注意・閉会式にも影響）</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">12:00<br>～13:00</td>
-                                        <td class="location-col">全体会場</td>
-                                        <td class="activity-col">🏆 閉会式</td>
-                                        <td class="note-col"><strong>空気作り（繋がから）キュッと締める</strong><br><br>⚠️ <strong>12:00～12:30 楽器演奏が続いているため音量に注意</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time-col">13:00～</td>
-                                        <td class="location-col">エントランス</td>
-                                        <td class="activity-col">🏁 解散</td>
-                                        <td class="note-col"><strong>終了後の動き:</strong><br>・資料等・清算<br>・各校舎に連絡<br>・忘れ物確認</td>
-                                    </tr>
+                                <tbody data-staff-schedule-tbody="day3">
+                                    <!-- staff/schedule.js が staff/schedule-data.js から描画 -->
                                 </tbody>
                             </table>
                         </div>
@@ -330,6 +188,8 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="schedule-data.js"></script>
+    <script src="schedule.js"></script>
     <script src="../assets/sidebar.js"></script>
     <script src="../script.js"></script>
     <script src="auth.js"></script>
