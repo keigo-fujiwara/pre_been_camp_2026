@@ -189,6 +189,28 @@
             </div>
         </section>
 
+        <!-- ============================================================
+             引率講師の紹介
+             ・タブ（校舎）と講師カードの中身は assets/teachers.js の
+               TEACHERS データで管理します。
+             ・内容の変更・追加は assets/teachers.js を編集してください。
+             　（下の2つの空 <div> の中身は JS が自動生成します）
+             ============================================================ -->
+        <section id="teachers" class="section">
+            <div class="container">
+                <h2 class="section-title">引率講師の紹介</h2>
+                <p class="section-intro">
+                    各校舎の引率講師をご紹介します。
+                </p>
+
+                <!-- 校舎タブ（JSが自動生成） -->
+                <div class="teachers-tabs" data-teachers-tabs role="tablist" aria-label="校舎の切り替え"></div>
+
+                <!-- 講師カード（JSが自動生成） -->
+                <div class="teachers-panels" data-teachers-panels></div>
+            </div>
+        </section>
+
         <!-- 学習内容 -->
         <section id="program" class="section">
             <div class="container">
@@ -921,6 +943,8 @@
     <script src="assets/schedule.js"></script>
     <script src="script.js"></script>
     <script src="assets/footer.js"></script>
+    <!-- 引率講師の紹介（内容の編集は assets/teachers.js を参照） -->
+    <script src="assets/teachers.js"></script>
     <!-- お知らせセクション（内容の編集は assets/news.js を参照） -->
     <script src="assets/news.js"></script>
 
