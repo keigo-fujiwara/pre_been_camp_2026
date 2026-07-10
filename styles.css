@@ -1570,11 +1570,12 @@ body.teacher-modal-open {
 
 /* 画像枠（顔写真など） */
 .news-card-image {
-  width: 100%;
+  width: 75%;
+  max-width: 240px;
   aspect-ratio: 4 / 3;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
   background-color: var(--color-pastel-green);
 }
 

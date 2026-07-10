@@ -15,6 +15,7 @@
 //     linkUrl     … ボタンのリンク先URL。空 "" のままなら「準備中」表示になります
 //     image       … 顔写真などの画像。空 "" のままなら画像枠（プレースホルダー）が表示されます
 //                   ※ image 項目を書かないカードは、画像枠なしの通常カードになります
+//     imagePosition … 画像の表示位置（例: 'center 15%'）。見切れる場合に調整
 //
 // ・ボタンを消したいカード … linkUrl と linkLabel の2行をどちらも削除してください
 //                            （両方無いカードは、ボタンが表示されなくなります）
@@ -56,9 +57,10 @@ const NEWS_ITEMS = [
   {
     icon: '👨‍🏫',
     title: '引率講師の紹介',
-    description: '当日は〇〇先生が案内してくれます。この先生を目印に集合しよう！',
+    description: '当日は藤原先生が案内してくれます。この先生を目印に集合しよう！',
     
-    image: '', // 例: 'assets/news/teacher.jpg' を入れてください。空なら画像枠が表示されます
+    image: 'assets/teachers/fujiwara_portrait.png', // 例: 'assets/news/teacher.jpg' を入れてください。空なら画像枠が表示されます
+    imagePosition: 'center 15%',
   },
 ];
 
@@ -100,9 +102,12 @@ const NEWS_ITEMS = [
     var imageHtml = '';
     if (Object.prototype.hasOwnProperty.call(item, 'image')) {
       if (item.image) {
+        var imagePosition = item.imagePosition
+          ? ' style="object-position:' + escapeHtml(item.imagePosition) + ';"'
+          : '';
         imageHtml =
           '<div class="news-card-image">' +
-          '<img src="' + escapeHtml(item.image) + '" alt="' + title + '" loading="lazy">' +
+          '<img src="' + escapeHtml(item.image) + '" alt="' + title + '" loading="lazy"' + imagePosition + '>' +
           '</div>';
       } else {
         // 画像未設定：あとから差し替えやすいプレースホルダー枠
